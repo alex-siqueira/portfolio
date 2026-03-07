@@ -1,123 +1,104 @@
-const navLinks = document.querySelectorAll('header nav a');
-const logoLink = document.querySelector('.logo');
-const sections = document.querySelectorAll('section');
-const menuIcon = document.querySelector('#menu-icon');
-const navbar = document.querySelector('header nav');
+'use strict';
 
-menuIcon.addEventListener('click', () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
-});
+/* =========================================
+   HEADER — scroll behavior
+   ========================================= */
+const header = document.getElementById('header');
 
-const activePage = () => {
-    const header = document.querySelector('header');
-    const barsBox = document.querySelector('.bars-box');
-
-    header.classList.remove('active');
-    setTimeout(() => {
-        header.classList.add('active');
-    }, 1100);
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-    });
-
-    barsBox.classList.remove('active');
-    setTimeout(() => {
-        barsBox.classList.add('active');
-    }, 1100);
-
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
-
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
+// Set initial state in case page is loaded mid-scroll
+if (window.scrollY > 20) {
+    header.classList.add('scrolled');
 }
 
-navLinks.forEach((link, idx) => {
+window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+
+/* =========================================
+   MOBILE MENU
+   ========================================= */
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.getElementById('nav');
+const menuIcon = menuToggle.querySelector('i');
+
+menuToggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuIcon.className = isOpen ? 'bx bx-x' : 'bx bx-menu';
+});
+
+// Close mobile menu when a nav link is clicked
+nav.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        if (!link.classList.contains('active')) {
-            activePage();
+        nav.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuIcon.className = 'bx bx-menu';
+    });
+});
 
-            link.classList.add('active');
 
-            setTimeout(() => {
-                sections[idx].classList.add('active');
-            }, 1100);
+/* =========================================
+   SCROLL SPY — IntersectionObserver
+   ========================================= */
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
         }
     });
+}, {
+    rootMargin: '-40% 0px -55% 0px',
+    threshold: 0,
 });
 
-logoLink.addEventListener('click', () => {
-    if (!navLinks[0].classList.contains('active')) {
-        activePage();
+sections.forEach(section => spyObserver.observe(section));
 
-        navLinks[0].classList.add('active');
 
-        setTimeout(() => {
-            sections[0].classList.add('active');
-        }, 1100);
-    }
+/* =========================================
+   TIMELINE TABS
+   ========================================= */
+const timelineTabs = document.querySelectorAll('.timeline-tab');
+
+timelineTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+
+        timelineTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        document.querySelectorAll('.timeline').forEach(tl => tl.classList.add('hidden'));
+        document.getElementById(`timeline-${target}`).classList.remove('hidden');
+    });
 });
 
-const resumeBtns = document.querySelectorAll('.resume-btn');
 
-resumeBtns.forEach((btn, idx) => {
+/* =========================================
+   PUBLICATIONS FILTER
+   ========================================= */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const pubCards = document.querySelectorAll('.pub-card');
+
+filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        const resumeDetails = document.querySelectorAll('.resume-detail');
+        const filter = btn.dataset.filter;
 
-        resumeBtns.forEach(btn => {
-            btn.classList.remove('active');
-        });
+        filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
-        resumeDetails.forEach(detail => {
-            detail.classList.remove('active');
+        pubCards.forEach(card => {
+            if (filter === 'all') {
+                card.classList.remove('hidden');
+            } else {
+                const categories = card.dataset.categories || '';
+                card.classList.toggle('hidden', !categories.includes(filter));
+            }
         });
-        resumeDetails[idx].classList.add('active');
     });
-});
-
-const arrowRight = document.querySelector('.portfolio-box .navigation .arrow-right');
-const arrowLeft = document.querySelector('.portfolio-box .navigation .arrow-left');
-
-let index = 0;
-
-const activePortfolio = () => {
-    const imgSlide = document.querySelector('.portfolio-carousel .img-slide');
-    const portfolioDetails = document.querySelectorAll('.portfolio-detail');
-
-    imgSlide.style.transform = `translateX(calc(${index * -100}% - ${index * 2}rem))`;
-
-    portfolioDetails.forEach(detail => {
-        detail.classList.remove('active');
-    });
-    portfolioDetails[index].classList.add('active');
-}
-
-arrowRight.addEventListener('click', () => {
-    if (index < 4) {
-        index++;
-        arrowLeft.classList.remove('disabled');
-    }
-    else {
-        index = 5;
-        arrowRight.classList.add('disabled');
-    }
-
-    activePortfolio();
-});
-
-arrowLeft.addEventListener('click', () => {
-    if (index > 1) {
-        index--;
-        arrowRight.classList.remove('disabled');
-    }
-    else {
-        index = 0;
-        arrowLeft.classList.add('disabled');
-    }
-
-    activePortfolio();
 });

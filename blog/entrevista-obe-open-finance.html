@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entrevista para o Open Banking Experience sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos.">
+    <meta name="author" content="Alexandre Siqueira">
+    <link rel="canonical" href="https://my-portfolio-3beda.web.app/blog/entrevista-obe-open-finance.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Alexandre Siqueira">
+    <meta property="og:title" content="Entrevista OBE — Open Finance e Iniciação de Pagamentos — Alexandre Siqueira">
+    <meta property="og:description" content="Entrevista para o Open Banking Experience sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos.">
+    <meta property="og:image" content="https://my-portfolio-3beda.web.app/images/eu.jpg">
+    <meta property="og:url" content="https://my-portfolio-3beda.web.app/blog/entrevista-obe-open-finance.html">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Entrevista OBE — Open Finance e Iniciação de Pagamentos — Alexandre Siqueira">
+    <meta name="twitter:description" content="Entrevista para o Open Banking Experience sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos.">
+    <meta name="twitter:image" content="https://my-portfolio-3beda.web.app/images/eu.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Entrevista OBE — Open Finance e Iniciação de Pagamentos",
+      "datePublished": "2022-07-22",
+      "description": "Entrevista para o Open Banking Experience sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos.",
+      "url": "https://my-portfolio-3beda.web.app/blog/entrevista-obe-open-finance.html",
+      "author": {"@type": "Person", "name": "Alexandre Siqueira", "url": "https://my-portfolio-3beda.web.app"}
+    }
+    </script>
+    <title>Entrevista OBE — Open Finance e Iniciação de Pagamentos — Alexandre Siqueira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .post-header { padding: 14rem 0 5rem; background: var(--dark-bg); color: var(--text-dark); }
+        .post-header__back { display: inline-flex; align-items: center; gap: 0.6rem; font-size: 1.4rem; font-weight: 500; color: var(--accent); text-decoration: none; margin-bottom: 3rem; transition: gap var(--transition); }
+        .post-header__back:hover { gap: 1rem; }
+        .post-header__meta { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 2rem; }
+        .post-header__date { font-family: var(--font-mono); font-size: 1.3rem; color: rgba(232, 234, 240, 0.5); }
+        .post-header h1 { font-family: var(--font-serif); font-size: clamp(3rem, 5.5vw, 5rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; max-width: 22ch; margin-bottom: 2rem; }
+        .post-header__excerpt { font-size: 1.8rem; color: rgba(232, 234, 240, 0.65); max-width: 60ch; line-height: 1.7; }
+        .post-body { padding: 7rem 0 9rem; }
+        .post-content { max-width: 72rem; margin: 0 auto; }
+        .post-content p { font-size: 1.75rem; line-height: 1.82; color: rgba(30, 30, 46, 0.85); margin-bottom: 2rem; }
+        .post-content h2 { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 700; color: var(--text-light); margin: 4rem 0 1.6rem; letter-spacing: -0.015em; }
+        .post-content h3 { font-family: var(--font-serif); font-size: 2.2rem; font-weight: 600; color: var(--text-light); margin: 3rem 0 1.2rem; }
+        .post-content ul, .post-content ol { margin: 1.6rem 0 2rem 2.4rem; }
+        .post-content li { font-size: 1.75rem; line-height: 1.75; color: rgba(30, 30, 46, 0.85); margin-bottom: 0.8rem; }
+        .post-content a { color: var(--accent-dark); text-decoration: underline; text-underline-offset: 3px; }
+        .post-content a:hover { color: var(--accent); }
+        .post-content strong { color: var(--text-light); font-weight: 600; }
+        .post-content blockquote { border-left: 3px solid var(--accent-dark); padding: 0.8rem 0 0.8rem 2.4rem; margin: 2.5rem 0; }
+        .post-content blockquote p { font-family: var(--font-serif); font-style: italic; color: rgba(30, 30, 46, 0.7); }
+        .post-footer { margin-top: 6rem; padding-top: 3rem; border-top: 1px solid var(--light-border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; }
+        .post-footer__author-name { font-family: var(--font-serif); font-size: 1.7rem; font-weight: 600; color: var(--text-light); }
+        .post-footer__author-role { font-size: 1.35rem; color: var(--text-muted); }
+    </style>
+</head>
+<body>
+
+    <header id="header" class="scrolled">
+        <div class="header-inner">
+            <a href="../index.html" class="logo" aria-label="Voltar ao início"><span class="logo-name">Alexandre Siqueira</span></a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><i class="bx bx-menu" aria-hidden="true"></i></button>
+            <nav id="nav" aria-label="Navegação principal">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="../index.html#sobre" class="nav-link">Sobre</a>
+                <a href="../index.html#experiencia" class="nav-link">Experiência</a>
+                <a href="../index.html#publicacoes" class="nav-link active">Publicações</a>
+                <a href="../index.html#contato" class="nav-link">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="post-header">
+            <div class="container">
+                <a href="index.html" class="post-header__back"><i class="bx bx-arrow-back" aria-hidden="true"></i> Todas as publicações</a>
+                <div class="post-header__meta">
+                    <span class="pub-tag pub-tag--midia">Mídia</span>
+                    <time class="post-header__date" datetime="2022-07-22">22 de julho de 2022</time>
+                </div>
+                <h1>Open Finance Brasil e Iniciação de Pagamentos</h1>
+                <p class="post-header__excerpt">Entrevista para o Open Banking Experience sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos.</p>
+            </div>
+        </div>
+
+        <article class="post-body section section--light">
+            <div class="container">
+                <div class="post-content">
+
+                    <p>O Open Finance Brasil é um dos projetos mais desafiadores que tive oportunidade de participar, e apesar de ainda ser um "work in progress", me impressiona o nível de transformação que ele já causa no mercado de bancos e fintechs.
+                    
+                    <p>Pude apresentar um pouco da minha visão sobre o tema num bate-papo muito bacana promovido pela <a href="https://www.linkedin.com/company/open-banking-excellence/">Open Banking Excellence (OBE) </a> com duas feras no assunto: <a href="https://www.linkedin.com/in/cjorge08/">Carlos Jorge da Chicago </a> e <a href="https://www.linkedin.com/in/mariane-flores-778445124/">Mariane Flores do Google</a>.</p>
+
+                    <p>Um pedaço da nossa conversa está no post da OBE.</p>
+
+                    <div class="post-footer">
+                        <div class="post-footer__author">
+                            <div>
+                                <p class="post-footer__author-name">Alexandre Siqueira</p>
+                                <p class="post-footer__author-role">Especialista em Cibersegurança &middot; Mercado Livre</p>
+                            </div>
+                        </div>
+                        <a href="index.html" class="btn btn--ghost" style="border-color: var(--light-border); color: var(--text-light);">Ver todas as publicações</a>
+                    </div>
+
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p class="footer__copy">&copy; 2026 Alexandre Siqueira. Feito com curiosidade.</p>
+            <div class="footer__social">
+                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin" aria-hidden="true"></i></a>
+                <a href="#" aria-label="YouTube TechStudio"><i class="bx bxl-youtube" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav');
+        const menuIcon = menuToggle.querySelector('i');
+        menuToggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuIcon.className = isOpen ? 'bx bx-x' : 'bx bx-menu';
+        });
+    </script>
+</body>
+</html>

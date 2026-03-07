@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Publicações, artigos, podcasts e aparições na mídia de Alexandre Siqueira sobre cibersegurança, blockchain e tecnologia.">
+    <meta name="author" content="Alexandre Siqueira">
+    <link rel="canonical" href="https://my-portfolio-3beda.web.app/blog/">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Alexandre Siqueira">
+    <meta property="og:title" content="Publicações &amp; Mídia — Alexandre Siqueira">
+    <meta property="og:description" content="Publicações, artigos, podcasts e aparições na mídia de Alexandre Siqueira sobre cibersegurança, blockchain e tecnologia.">
+    <meta property="og:image" content="https://my-portfolio-3beda.web.app/images/eu.jpg">
+    <meta property="og:url" content="https://my-portfolio-3beda.web.app/blog/">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Publicações &amp; Mídia — Alexandre Siqueira">
+    <meta name="twitter:description" content="Publicações, artigos, podcasts e aparições na mídia de Alexandre Siqueira sobre cibersegurança, blockchain e tecnologia.">
+    <meta name="twitter:image" content="https://my-portfolio-3beda.web.app/images/eu.jpg">
+    <title>Publicações &amp; Mídia — Alexandre Siqueira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .blog-header {
+            padding: 14rem 0 5rem;
+            background: var(--dark-bg);
+            color: var(--text-dark);
+        }
+
+        .blog-header h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(3.5rem, 6vw, 5.5rem);
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            margin-bottom: 1rem;
+        }
+
+        .blog-header p {
+            font-size: 1.7rem;
+            color: rgba(232, 234, 240, 0.65);
+        }
+
+        .blog-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+            margin-bottom: 3rem;
+            transition: gap var(--transition);
+        }
+
+        .blog-back:hover {
+            gap: 1rem;
+        }
+
+        .blog-listing {
+            padding: var(--section-padding);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header" class="scrolled">
+        <div class="header-inner">
+            <a href="../index.html" class="logo" aria-label="Voltar ao início">
+                <span class="logo-name">Alexandre Siqueira</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="bx bx-menu" aria-hidden="true"></i>
+            </button>
+            <nav id="nav" aria-label="Navegação principal">
+                <a href="../index.html#home" class="nav-link">Home</a>
+                <a href="../index.html#sobre" class="nav-link">Sobre</a>
+                <a href="../index.html#experiencia" class="nav-link">Experiência</a>
+                <a href="../index.html#publicacoes" class="nav-link active">Publicações</a>
+                <a href="../index.html#contato" class="nav-link">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="blog-header">
+            <div class="container">
+                <a href="../index.html" class="blog-back">
+                    <i class="bx bx-arrow-back" aria-hidden="true"></i> Voltar ao site
+                </a>
+                <h1>Publicações &amp; Mídia</h1>
+                <p>Artigos, podcasts, publicações acadêmicas e aparições na mídia.</p>
+            </div>
+        </div>
+
+        <section class="blog-listing section section--light">
+            <div class="container">
+
+                <div class="filter-bar" role="group" aria-label="Filtrar por categoria">
+                    <button class="filter-btn active" data-filter="all">Tudo</button>
+                    <button class="filter-btn" data-filter="podcast">Podcast &amp; Mídia</button>
+                    <button class="filter-btn" data-filter="blockchain">Blockchain &amp; SSI</button>
+                    <button class="filter-btn" data-filter="seguranca">Segurança &amp; Privacidade</button>
+                    <button class="filter-btn" data-filter="academico">Publicações Acadêmicas</button>
+                </div>
+
+                <div class="pub-grid" id="pub-grid">
+
+                    <article class="pub-card" data-categories="podcast blockchain">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--podcast">Podcast</span>
+                        </div>
+                        <h2 class="pub-card__title">Identidades Digitais Baseadas em Blockchain</h2>
+                        <p class="pub-card__desc">Episódio do Café Seguro Podcast sobre o uso de blockchain para identidades digitais soberanas e suas aplicações práticas.</p>
+                        <a href="cafe-seguro-podcast-identidades-digitais.html" class="pub-card__link">Ler mais &rarr;</a>
+                    </article>
+
+                    <article class="pub-card" data-categories="seguranca">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--blog">Blog</span>
+                        </div>
+                        <h2 class="pub-card__title">Privacidade, redes sociais e o quadro de avisos</h2>
+                        <p class="pub-card__desc">Não é só porque um recado no quadro de avisos do condomínio foi escrito para os moradores, que só os moradores vão ler.</p>
+                        <a href="privacidade-redes-sociais.html" class="pub-card__link">Ler mais &rarr;</a>
+                    </article>
+
+                    <article class="pub-card" data-categories="academico blockchain">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--academico">Conferência</span>
+                        </div>
+                        <h2 class="pub-card__title">Performance Evaluation of Self-Sovereign Identity Use Cases</h2>
+                        <p class="pub-card__desc">Artigo apresentado na IEEE DApps 2023. Avaliação de desempenho de casos de uso de identidade auto-soberana em cenários reais.</p>
+                        <a href="ieee-dapps-2023-self-sovereign-identity.html" class="pub-card__link">Ler mais &rarr;</a>
+                    </article>
+
+                    <article class="pub-card" data-categories="blockchain">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--blog">Blog</span>
+                        </div>
+                        <h2 class="pub-card__title">Urna Eletrônica com Ethereum e Solidity</h2>
+                        <p class="pub-card__desc">Implementação de um sistema de votação eletrônica usando contratos inteligentes na blockchain Ethereum com Solidity.</p>
+                        <a href="urna-eletronica-ethereum-solidity.html" class="pub-card__link">Ler mais &rarr;</a>
+                    </article>
+
+                    <article class="pub-card" data-categories="academico">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--academico">Capítulo de livro</span>
+                        </div>
+                        <h2 class="pub-card__title">Práticas de Gestão da Inovação</h2>
+                        <p class="pub-card__desc">Capítulo publicado no Volume 3 da série sobre Práticas de Gestão da Inovação.</p>
+                        <a href="livro-gestao-inovacao-vol3.html" class="pub-card__link">Ler mais &rarr;</a>
+                    </article>
+
+                    <article class="pub-card" data-categories="seguranca">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--blog">Blog</span>
+                        </div>
+                        <h2 class="pub-card__title">Ransomware &mdash; E se Alguém Sequestrasse seu Computador?</h2>
+                        <p class="pub-card__desc">A pergunta é: O quão disposto você estaria a pagar o resgate?</p>
+                        <a href="ransomware.html" class="pub-card__link">Ler mais &rarr;</a>
+                    </article>
+
+                    <article class="pub-card" data-categories="academico">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--academico">Capítulo de livro</span>
+                        </div>
+                        <h2 class="pub-card__title">Fundamentos e Tendências em Inovação Tecnológica</h2>
+                        <p class="pub-card__desc">Capítulo publicado no Volume 2 da série sobre Fundamentos e Tendências em Inovação Tecnológica.</p>
+                        <a href="livro-inovacao-tecnologica-vol2.html" class="pub-card__link">Ler mais &rarr;</a>
+                    </article>
+
+                    <article class="pub-card" data-categories="podcast">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--midia">Mídia</span>
+                        </div>
+                        <h2 class="pub-card__title">Entrevista InfoMoney &mdash; Pix com Open Banking é seguro?</h2>
+                        <p class="pub-card__desc">Entrevista concedida ao InfoMoney sobre segurança no ecossistema do Pix integrado ao Open Banking.</p>
+                        <a href="entrevista-infomoney-pix-open-banking.html" class="pub-card__link">Ler mais &rarr;</a>
+                    </article>
+
+                    <article class="pub-card" data-categories="podcast">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--midia">Mídia</span>
+                        </div>
+                        <h2 class="pub-card__title">Entrevista OBE &mdash; Open Finance e Iniciação de Pagamentos</h2>
+                        <p class="pub-card__desc">Entrevista para o Open Banking Experience sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos.</p>
+                        <a href="entrevista-obe-open-finance.html" class="pub-card__link">Ler mais &rarr;</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p class="footer__copy">&copy; 2026 Alexandre Siqueira. Feito com curiosidade.</p>
+            <div class="footer__social">
+                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bx bxl-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="#" aria-label="YouTube TechStudio">
+                    <i class="bx bxl-youtube" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu (inline — no external script needed on this page)
+        const menuToggle = document.getElementById('menu-toggle');
+        const nav = document.getElementById('nav');
+        const menuIcon = menuToggle.querySelector('i');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('active');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuIcon.className = isOpen ? 'bx bx-x' : 'bx bx-menu';
+        });
+
+        // Publications filter
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                document.querySelectorAll('.pub-card').forEach(card => {
+                    if (filter === 'all') {
+                        card.classList.remove('hidden');
+                    } else {
+                        const cats = card.dataset.categories || '';
+                        card.classList.toggle('hidden', !cats.includes(filter));
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

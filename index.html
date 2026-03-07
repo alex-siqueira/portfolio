@@ -1,489 +1,449 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandre Siqueira | Um olhar curioso sobre a tecnologia</title>
-    <!-- boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- custom css -->
+    <meta name="description" content="Alexandre Siqueira — Especialista em cibersegurança, arquiteto de software, pesquisador e criador de conteúdo. Um olhar curioso sobre a tecnologia.">
+    <meta name="author" content="Alexandre Siqueira">
+    <link rel="canonical" href="https://my-portfolio-3beda.web.app/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Alexandre Siqueira">
+    <meta property="og:title" content="Alexandre Siqueira — Um olhar curioso sobre a tecnologia">
+    <meta property="og:description" content="Alexandre Siqueira — Especialista em cibersegurança, arquiteto de software, pesquisador e criador de conteúdo. Um olhar curioso sobre a tecnologia.">
+    <meta property="og:image" content="https://my-portfolio-3beda.web.app/images/eu.jpg">
+    <meta property="og:url" content="https://my-portfolio-3beda.web.app/">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alexandre Siqueira — Um olhar curioso sobre a tecnologia">
+    <meta name="twitter:description" content="Alexandre Siqueira — Especialista em cibersegurança, arquiteto de software, pesquisador e criador de conteúdo.">
+    <meta name="twitter:image" content="https://my-portfolio-3beda.web.app/images/eu.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alexandre Siqueira",
+      "url": "https://my-portfolio-3beda.web.app",
+      "image": "https://my-portfolio-3beda.web.app/images/eu.jpg",
+      "jobTitle": "Cybersecurity Tech Leader",
+      "worksFor": {"@type": "Organization", "name": "Mercado Livre"},
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "Universidade Federal de São Paulo — UNIFESP"},
+        {"@type": "CollegeOrUniversity", "name": "Universidade Metodista de São Paulo"}
+      ],
+      "knowsAbout": ["Cibersegurança", "Open Finance", "Blockchain", "Identidade Digital", "Arquitetura de Software"],
+      "sameAs": [
+        "https://linkedin.com/in/siqueiraalexandre",
+        "https://github.com/alex-siqueira",
+        "https://www.youtube.com/TechstudioPod"
+      ]
+    }
+    </script>
+    <title>Alexandre Siqueira — Um olhar curioso sobre a tecnologia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- header -->
-    <header class="active">
-        <a href="#" class="logo">Um olhar curioso sobre a tecnologia</a>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="#home" class="logo" aria-label="Ir para o início">
+                <span class="logo-name">Alexandre Siqueira</span>
+            </a>
 
-        <i class='bx bx-menu' id="menu-icon"></i>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="bx bx-menu" aria-hidden="true"></i>
+            </button>
 
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Atividades</a>
-            <a href="#">Currículo</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contato</a>
-        </nav>
+            <nav id="nav" aria-label="Navegação principal">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#experiencia" class="nav-link">Experiência</a>
+                <a href="#publicacoes" class="nav-link">Publicações</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- bars background -->
-    <div class="bars-box active">
-        <div class="bar" style="--i:6;"></div>
-        <div class="bar" style="--i:5;"></div>
-        <div class="bar" style="--i:4;"></div>
-        <div class="bar" style="--i:3;"></div>
-        <div class="bar" style="--i:2;"></div>
-        <div class="bar" style="--i:1;"></div>
-    </div>
+    <main>
 
-    <!-- home section -->
-    <section class="home active">
-        <div class="home-detail">
-            <h1>Olá! Eu sou Alexandre</h1>
-            <h2>Sou apaixonado por
-                <span style="--i:4;" data-text="Tecnologia">Tecnologia</span>
-                <span style="--i:3;" data-text="Cibersegurança">Cibersegurança</span>
-                <span style="--i:2;" data-text="Inovação">Inovação</span>
-                <span style="--i:1;" data-text="Cultura Maker">Cultura Maker</span>
-            </h2>
+        <!-- HERO -->
+        <section id="home" class="section section--dark hero">
+            <div class="container hero__inner">
+                <div class="hero__content">
+                    <p class="hero__label">Tecnologia &middot; Cibersegurança &middot; Inovação</p>
+                    <h1 class="hero__name">Alexandre<br>Siqueira</h1>
+                    <p class="hero__tagline">Um olhar curioso sobre a tecnologia</p>
+                    <p class="hero__intro">Mais de 20 anos em tecnologia — de desenvolvedor a arquiteto de software, hoje especialista em cibersegurança no Mercado Livre e pesquisador em identidades digitais.</p>
+                    <div class="hero__actions">
+                        <a href="#sobre" class="btn btn--primary">Conheça meu trabalho</a>
+                        <a href="#contato" class="btn btn--ghost">Entre em contato</a>
+                    </div>
+                    <div class="hero__social">
+                        <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" aria-label="GitHub de Alexandre Siqueira">
+                            <i class="bx bxl-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" aria-label="LinkedIn de Alexandre Siqueira">
+                            <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.youtube.com/TechstudioPod" target="_blank" rel="noopener" aria-label="Canal YouTube TechStudio">
+                            <i class="bx bxl-youtube" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
 
-            <p>Com mais de 20 anos na área de tecnologia, comecei como desenvolvedor de software, criando sistemas para os setores de telecom e mercado financeiro. A evolução natural da carreira de desenvolvedor para arquiteto de software me permitiu projetar e proteger soluções de tecnologia diversas, o que me levou à minha atual especialização em cibersegurança.</p>
-            <p>Atualmente, lidero os esforços de segurança da informação no Mercado Livre, com enfoque na proteção de nossos produtos de criptoativos. Também tive a oportunidade de exercer um papel importante na iniciativa do Open Finance Brasil, sendo co-autor do Perfil de Segurança que estabeleceu as políticas de segurança fundamentais para todo o ecossistema de Open Banking nacional.</p>
-            <p>Minha formação acadêmica inclui um Mestrado em Inovação Tecnológica pela Universidade Federal de São Paulo, onde pude pesquisar sobre o uso de identidades digitais baseadas em blockchain para a criação de um prontuário médico decentralizado. Também possuo um Bacharelado em Ciências da Computação pela Universidade Metodista de São Paulo.</p>
-            <p>Como professor freelancer, compartilho um pouco dos meus conhecimentos em Cybersecurity & Cyberlaw com estudantes do MBA em Arquitetura de Soluções Digitais. Pude experimentar com algumas mídias digitais, discutindo o impacto da tecnologia através do meu canal no YouTube e podcast "TechStudio". </p>
-            <p>Fora das minhas atividades profissionais, sou casado, pai de uma linda garota, sou também astrônomo amador nos fins de semana, quando tento capturar a beleza dos céus noturnos através de minhas lentes. Encaro meus hobbies com a mesma paixão e curiosidade que impulsionam minhas atividades profissionais. Daí vem meu mote: "Um olhar curioso sobre a tecnologia".</p>
-            <p>Vamos conversar?</p>
-
-            <div class="btn-sci">
-                <a href="#" class="btn">Download CV</a>
-                <div class="sci">
-                    <a href="https://github.com/alex-siqueira"><i class='bx bxl-github'></i></a>
-                    <a href="https://www.linkedin.com/in/siqueiraalexandre"><i class='bx bxl-linkedin'></i></a>
-                    <a href="#"><i class='bx bxl-discord-alt'></i></a>
-                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                <div class="hero__image">
+                    <div class="hero__image-frame">
+                        <img src="images/eu.jpg" alt="Foto de Alexandre Siqueira" width="480" height="480">
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="home-img">
-            <div class="img-box">
-                <div class="img-item">
-                    <img src="images/home.png">
+        <!-- SOBRE -->
+        <section id="sobre" class="section section--light">
+            <div class="container sobre__inner">
+                <div class="sobre__bio">
+                    <h2 class="section-heading">Sobre mim</h2>
+                    <p>Comecei escrevendo código para sistemas em empresas de telecom e mercado financeiro. Com o tempo, passei a pensar mais em como os sistemas <em>falham</em> do que em como funcionam — e foi assim que migrei naturalmente para arquitetura de software e, depois, para cibersegurança.</p>
+                    <p>Hoje lidero segurança no <strong>Mercado Livre</strong>, com foco nos produtos de criptoativos da maior fintech da América Latina. Antes disso, fui co-autor do <strong>Perfil de Segurança do Open Finance Brasil</strong> — o framework que estruturou as políticas de segurança de todo o ecossistema de Open Banking nacional.</p>
+                    <p>Meu mestrado na <strong>UNIFESP</strong> investigou identidades digitais em blockchain aplicadas à saúde: como criar prontuários médicos descentralizados sem comprometer a privacidade do paciente. O trabalho chegou à <strong>IEEE DApps 2023</strong> — uma das principais conferências de blockchain aplicado.</p>
+                    <p>Dei aulas de Cybersecurity &amp; Cyberlaw no MBA de Arquitetura de Soluções da <strong>Universidade Impacta</strong>, e discuto tecnologia no canal e podcast <strong>TechStudio</strong> — com menos buzzword e mais substância.</p>
+                    <p>Nos fins de semana, troco o monitor pelo telescópio. Sou astrônomo amador e pai — dois papéis que me ensinaram que o olhar curioso vale mais do que qualquer certificação.</p>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- services section -->
-    <section class="services">
-        <h2 class="heading">My <span>Services</span></h2>
-        <div class="services-container">
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx bx-code-alt'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
+                <aside class="sobre__sidebar">
+                    <div class="info-card">
+                        <h3 class="info-card__title">Em resumo</h3>
+                        <ul class="info-list">
+                            <li class="info-list__item">
+                                <i class="bx bxs-building-house" aria-hidden="true"></i>
+                                <div>
+                                    <span class="info-list__label">Empresa</span>
+                                    <span class="info-list__value">Mercado Livre</span>
+                                </div>
+                            </li>
+                            <li class="info-list__item">
+                                <i class="bx bxs-shield-alt-2" aria-hidden="true"></i>
+                                <div>
+                                    <span class="info-list__label">Especialidade</span>
+                                    <span class="info-list__value">Segurança e arquitetura de software</span>
+                                </div>
+                            </li>
+                            <li class="info-list__item">
+                                <i class="bx bxs-graduation" aria-hidden="true"></i>
+                                <div>
+                                    <span class="info-list__label">Formação</span>
+                                    <span class="info-list__value">Mestre em inovação tecnológica &mdash; UNIFESP</span>
+                                </div>
+                            </li>
+                            <li class="info-list__item">
+                                <i class="bx bxs-map" aria-hidden="true"></i>
+                                <div>
+                                    <span class="info-list__label">Localização</span>
+                                    <span class="info-list__value">São Paulo, Brasil</span>
+                                </div>
+                            </li>
+                            <li class="info-list__item">
+                                <i class="bx bxl-youtube" aria-hidden="true"></i>
+                                <div>
+                                    <span class="info-list__label">Conteúdo</span>
+                                    <span class="info-list__value">TechStudio &mdash; Podcast e YouTube</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tag-cloud">
+                        <span class="tag">Cibersegurança</span>
+                        <span class="tag">Open Finance</span>
+                        <span class="tag">Blockchain</span>
+                        <span class="tag">Identidade Digital</span>
+                        <span class="tag">Cyberlaw</span>
+                        <span class="tag">Arquitetura de Software</span>
+                        <span class="tag">Self-Sovereign Identity</span>
+                        <span class="tag">Criptoativos</span>
+                        <span class="tag">Privacy</span>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- EXPERIÊNCIA -->
+        <section id="experiencia" class="section section--light section--bordered">
+            <div class="container">
+                <h2 class="section-heading section-heading--centered">Trajetória</h2>
+
+                <div class="timeline-tabs" role="group" aria-label="Selecionar trajetória">
+                    <button class="timeline-tab active" data-tab="profissional">Profissional</button>
+                    <button class="timeline-tab" data-tab="academico">Acadêmica</button>
                 </div>
-                <h3>Web Development</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ab commodi est dolor enim. Illo.</p>
-            </div>
 
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx bxs-paint'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
-                </div>
-                <h3>UI/UX Design</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ab commodi est dolor enim. Illo.</p>
-            </div>
-
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx bx-palette'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
-                </div>
-                <h3>Graphic Design</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ab commodi est dolor enim. Illo.</p>
-            </div>
-
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx bx-trending-up'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
-                </div>
-                <h3>SEO</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ab commodi est dolor enim. Illo.</p>
-            </div>
-
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx bx-slideshow'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
-                </div>
-                <h3>Video Editing</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ab commodi est dolor enim. Illo.</p>
-            </div>
-
-            <div class="services-box">
-                <div class="icon">
-                    <i class='bx bx-camera'></i>
-                    <a href="#"><i class='bx bx-arrow-back'></i></a>
-                </div>
-                <h3>Photography</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus ab commodi est dolor enim. Illo.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- resume section -->
-    <section class="resume">
-        <div class="resume-container">
-            <div class="resume-box">
-                <h2>Why Hire Me?</h2>
-                <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum temporibus dolorem ducimus beatae iure amet.</p>
-                <button class="resume-btn active">Experience</button>
-                <button class="resume-btn">Education</button>
-                <button class="resume-btn">Skills</button>
-                <button class="resume-btn">About Me</button>
-            </div>
-
-            <div class="resume-box">
-                <div class="resume-detail experience active">
-                    <h2 class="heading">My <span>Experience</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, exercitationem nihil enim corporis esse facilis tempore assumenda quidem quaerat expedita.</p>
-                    <div class="resume-list">
-                        <div class="resume-item">
-                            <p class="year">2023 - Present</p>
-                            <h3>Frontend Developer</h3>
-                            <p class="company">Abc Corp.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dignissimos.</p>
+                <div class="timeline" id="timeline-profissional">
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__card">
+                            <span class="timeline__period">2020 &ndash; Atual</span>
+                            <h3 class="timeline__role">Cybersecurity Tech Leader</h3>
+                            <p class="timeline__company">Mercado Livre</p>
+                            <p class="timeline__desc">Liderança dos esforços de segurança da informação com enfoque na proteção de produtos de fintech.</p>
                         </div>
-                        <div class="resume-item">
-                            <p class="year">2022 - 2023</p>
-                            <h3>Full Stack Developer</h3>
-                            <p class="company">Google</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dignissimos.</p>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__card">
+                            <span class="timeline__period">2022 &ndash; 2025</span>
+                            <h3 class="timeline__role">Professor Freelancer</h3>
+                            <p class="timeline__company">MBA em Arquitetura de Soluções Digitais</p>
+                            <p class="timeline__desc">Disciplinas de Cybersecurity &amp; Cyberlaw para estudantes de pós-graduação em arquitetura de soluções digitais.</p>
                         </div>
-                        <div class="resume-item">
-                            <p class="year">2021 - 2022</p>
-                            <h3>Backend Developer</h3>
-                            <p class="company">YouTube</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dignissimos.</p>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__card">
+                            <span class="timeline__period">2016 &ndash; 2020</span>
+                            <h3 class="timeline__role">Security Architect</h3>
+                            <p class="timeline__company">CA Technologies / HCL Technologies</p>
+                            <p class="timeline__desc">Arquiteto de Professional Services para soluções de Segurança da Informação - Especialista na América Latina sobre API Management</p>
                         </div>
-                        <div class="resume-item">
-                            <p class="year">2020 - 2021</p>
-                            <h3>Frontend Developer</h3>
-                            <p class="company">Xyz Inc.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dignissimos.</p>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__card">
+                            <span class="timeline__period">2014 &ndash; 2016</span>
+                            <h3 class="timeline__role">Architecture Specialist</h3>
+                            <p class="timeline__company">HSBC</p>
+                            <p class="timeline__desc">Líder do time local de desenvolvimento do projeto “Brazil Post Trade & Integration”, plataforma de BackOffice de tesouraria para derivativos de balcão.</p>
                         </div>
-                        <div class="resume-item">
-                            <p class="year">2019 - 2020</p>
-                            <h3>UI/UX Designer</h3>
-                            <p class="company">Abc Inc.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dignissimos.</p>
-                        </div>
-                        <div class="resume-item">
-                            <p class="year">2018 - 2019</p>
-                            <h3>Junior Developer</h3>
-                            <p class="company">Xyz Corp.</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, dignissimos.</p>
+                    </div>
+
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__card">
+                            <span class="timeline__period">Início de carreira</span>
+                            <h3 class="timeline__role">Desenvolvedor de Software</h3>
+                            <p class="timeline__company">Empresas de Telecom e Mercado Financeiro</p>
+                            <p class="timeline__desc">Desenvolvimento de sistemas para os setores de telecomunicações e mercado financeiro. Base para mais de duas décadas de atuação em tecnologia.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="resume-detail education">
-                    <h2 class="heading">My <span>Education</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, exercitationem nihil enim corporis esse facilis tempore assumenda quidem quaerat expedita.</p>
-                    <div class="resume-list">
-                        <div class="resume-item">
-                            <p class="year">2024</p>
-                            <h3>Programming Course</h3>
-                            <p class="company">Online Course</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, harum.</p>
-                        </div>
-                        <div class="resume-item">
-                            <p class="year">2022 - 2023</p>
-                            <h3>Web Development Bootcamp</h3>
-                            <p class="company">Online Course Platform</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, harum.</p>
-                        </div>
-                        <div class="resume-item">
-                            <p class="year">2020</p>
-                            <h3>Certified Web Development</h3>
-                            <p class="company">Online Course</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, harum.</p>
-                        </div>
-                        <div class="resume-item">
-                            <p class="year">2017 - 2018</p>
-                            <h3>Doctor of Engineering</h3>
-                            <p class="company">Codehal University</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, harum.</p>
-                        </div>
-                        <div class="resume-item">
-                            <p class="year">2015 - 2017</p>
-                            <h3>Master of Computer Science</h3>
-                            <p class="company">Codehal University</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, harum.</p>
-                        </div>
-                        <div class="resume-item">
-                            <p class="year">2012 - 2015</p>
-                            <h3>Bachelor of Data Science</h3>
-                            <p class="company">Codehal University</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, harum.</p>
+                <div class="timeline hidden" id="timeline-academico">
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__card">
+                            <span class="timeline__period">Mestrado</span>
+                            <h3 class="timeline__role">Mestrado em Inovação Tecnológica</h3>
+                            <p class="timeline__company">Universidade Federal de São Paulo &mdash; UNIFESP</p>
+                            <p class="timeline__desc">Pesquisa sobre identidades digitais baseadas em blockchain para prontuários médicos descentralizados. Resultou na publicação apresentada na IEEE DApps 2023.</p>
                         </div>
                     </div>
-                </div>
 
-                <div class="resume-detail skills">
-                    <h2 class="heading">My <span>Skills</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, exercitationem nihil enim corporis esse facilis tempore assumenda quidem quaerat expedita.</p>
-                    <div class="resume-list">
-                        <div class="resume-item">
-                            <i class='bx bxl-html5'></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="resume-item">
-                            <i class='bx bxl-css3'></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="resume-item">
-                            <i class='bx bxl-javascript'></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="resume-item">
-                            <i class='bx bxl-react'></i>
-                            <span>React.js</span>
-                        </div>
-                        <div class="resume-item">
-                            <i class='bx bxl-vuejs'></i>
-                            <span>Vue.js</span>
-                        </div>
-                        <div class="resume-item">
-                            <i class='bx bxl-tailwind-css'></i>
-                            <span>Tailwind CSS</span>
-                        </div>
-                        <div class="resume-item">
-                            <i class='bx bxl-nodejs'></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="resume-item">
-                            <i class='bx bxl-mongodb'></i>
-                            <span>MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="resume-detail about">
-                    <h2 class="heading">About <span>Me</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, exercitationem nihil enim corporis esse facilis tempore assumenda quidem quaerat expedita.</p>
-                    <div class="resume-list">
-                        <div class="resume-item">
-                            <p>Name <span>Lucius Meshach</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Gender <span>Male</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Age <span>32 Years Old</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Status <span>Married</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>City <span>San Francisco</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Nationality <span>American</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Experience <span>10+ Years</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Full Time <span>Available</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Freelance <span>Available</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Phone <span>(+12) 345 678 910</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Email <span>lucius@gmail.com</span></p>
-                        </div>
-                        <div class="resume-item">
-                            <p>Languages <span>English, French</span></p>
+                    <div class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true"></div>
+                        <div class="timeline__card">
+                            <span class="timeline__period">Graduação</span>
+                            <h3 class="timeline__role">Bacharelado em Ciências da Computação</h3>
+                            <p class="timeline__company">Universidade Metodista de São Paulo</p>
+                            <p class="timeline__desc">Formação em fundamentos de ciência da computação — Orador da turma de 2003.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- portfolio section -->
-    <section class="portfolio">
-        <h2 class="heading">Latest <span>Project</span></h2>
-        <div class="portfolio-container">
-            <div class="portfolio-box">
-                <div class="portfolio-detail active">
-                    <p class="numb">01</p>
-                    <h3>Frontend Project</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores natus rerum saepe. Eum modi assumenda quaerat temporibus.</p>
-                    <div class="tech">
-                        <p>HTML5, CSS3, JavaScript</p>
-                    </div>
-                    <div class="live-github">
-                        <a href="#"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
-                        <a href="#"><i class='bx bxl-github'></i><span>Github Repository</span></a>
-                    </div>
+        <!-- PUBLICAÇÕES -->
+        <section id="publicacoes" class="section section--light">
+            <div class="container">
+                <h2 class="section-heading section-heading--centered">Publicações &amp; Mídia</h2>
+
+                <div class="filter-bar" role="group" aria-label="Filtrar publicações por categoria">
+                    <button class="filter-btn active" data-filter="all">Tudo</button>
+                    <button class="filter-btn" data-filter="podcast">Podcast &amp; Mídia</button>
+                    <button class="filter-btn" data-filter="blockchain">Blockchain &amp; SSI</button>
+                    <button class="filter-btn" data-filter="seguranca">Segurança &amp; Privacidade</button>
+                    <button class="filter-btn" data-filter="academico">Publicações Acadêmicas</button>
                 </div>
 
-                <div class="portfolio-detail">
-                    <p class="numb">02</p>
-                    <h3>Full Stack Project</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores natus rerum saepe. Eum modi assumenda quaerat temporibus.</p>
-                    <div class="tech">
-                        <p>MongoDB, Express.js, React.js, Node.js</p>
-                    </div>
-                    <div class="live-github">
-                        <a href="#"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
-                        <a href="#"><i class='bx bxl-github'></i><span>Github Repository</span></a>
-                    </div>
-                </div>
+                <div class="pub-grid" id="pub-grid">
 
-                <div class="portfolio-detail">
-                    <p class="numb">03</p>
-                    <h3>Frontend Project</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores natus rerum saepe. Eum modi assumenda quaerat temporibus.</p>
-                    <div class="tech">
-                        <p>React.js, Tailwind CSS</p>
-                    </div>
-                    <div class="live-github">
-                        <a href="#"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
-                        <a href="#"><i class='bx bxl-github'></i><span>Github Repository</span></a>
-                    </div>
-                </div>
+                    <article class="pub-card" data-categories="podcast blockchain">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--podcast">Podcast</span>
+                        </div>
+                        <h3 class="pub-card__title">Identidades Digitais Baseadas em Blockchain</h3>
+                        <p class="pub-card__desc">Episódio do Café Seguro Podcast sobre o uso de blockchain para identidades digitais soberanas e suas aplicações práticas.</p>
+                        <a href="blog/cafe-seguro-podcast-identidades-digitais.html" class="pub-card__link">
+                            Ler mais &rarr;
+                        </a>
+                    </article>
 
-                <div class="portfolio-detail">
-                    <p class="numb">04</p>
-                    <h3>Full Stack Project</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores natus rerum saepe. Eum modi assumenda quaerat temporibus.</p>
-                    <div class="tech">
-                        <p>MongoDB, Express.js, AngularJS, Node.js</p>
-                    </div>
-                    <div class="live-github">
-                        <a href="#"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
-                        <a href="#"><i class='bx bxl-github'></i><span>Github Repository</span></a>
-                    </div>
-                </div>
+                    <article class="pub-card" data-categories="seguranca">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--blog">Blog</span>
+                        </div>
+                        <h3 class="pub-card__title">Privacidade, redes sociais e o quadro de avisos</h3>
+                        <p class="pub-card__desc">Não é só porque um recado no quadro de avisos do condomínio foi escrito para os moradores, que só os moradores vão ler.</p>
+                        <a href="blog/privacidade-redes-sociais.html" class="pub-card__link">
+                            Ler mais &rarr;
+                        </a>
+                    </article>
 
-                <div class="portfolio-detail">
-                    <p class="numb">05</p>
-                    <h3>Frontend Project</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores natus rerum saepe. Eum modi assumenda quaerat temporibus.</p>
-                    <div class="tech">
-                        <p>Vue.js, Tailwind CSS</p>
-                    </div>
-                    <div class="live-github">
-                        <a href="#"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
-                        <a href="#"><i class='bx bxl-github'></i><span>Github Repository</span></a>
-                    </div>
-                </div>
+                    <article class="pub-card" data-categories="academico blockchain">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--academico">Conferência</span>
+                        </div>
+                        <h3 class="pub-card__title">Performance Evaluation of Self-Sovereign Identity Use Cases</h3>
+                        <p class="pub-card__desc">Artigo apresentado na IEEE DApps 2023. Avaliação de desempenho de casos de uso de identidade auto-soberana em cenários reais.</p>
+                        <a href="blog/ieee-dapps-2023-self-sovereign-identity.html" class="pub-card__link">
+                            Ler mais &rarr;
+                        </a>
+                    </article>
 
-                <div class="portfolio-detail">
-                    <p class="numb">06</p>
-                    <h3>Full Stack Project</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit asperiores natus rerum saepe. Eum modi assumenda quaerat temporibus.</p>
-                    <div class="tech">
-                        <p>MongoDB, Express.js, Vue.js, Node.js</p>
-                    </div>
-                    <div class="live-github">
-                        <a href="#"><i class='bx bx-arrow-back'></i><span>Live Project</span></a>
-                        <a href="#"><i class='bx bxl-github'></i><span>Github Repository</span></a>
-                    </div>
+                    <article class="pub-card" data-categories="blockchain">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--blog">Blog</span>
+                        </div>
+                        <h3 class="pub-card__title">Urna Eletrônica com Ethereum e Solidity</h3>
+                        <p class="pub-card__desc">Implementação de um sistema de votação eletrônica usando contratos inteligentes na blockchain Ethereum com Solidity.</p>
+                        <a href="blog/urna-eletronica-ethereum-solidity.html" class="pub-card__link">
+                            Ler mais &rarr;
+                        </a>
+                    </article>
+
+                    <article class="pub-card" data-categories="academico">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--academico">Capítulo de livro</span>
+                        </div>
+                        <h3 class="pub-card__title">Práticas de Gestão da Inovação</h3>
+                        <p class="pub-card__desc">Capítulo publicado no Volume 3 da série sobre Práticas de Gestão da Inovação.</p>
+                        <a href="blog/livro-gestao-inovacao-vol3.html" class="pub-card__link">
+                            Ler mais &rarr;
+                        </a>
+                    </article>
+
+                    <article class="pub-card" data-categories="seguranca">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--blog">Blog</span>
+                        </div>
+                        <h3 class="pub-card__title">Ransomware &mdash; E se Alguém Sequestrasse seu Computador?</h3>
+                        <p class="pub-card__desc">A pergunta é: O quão disposto você estaria a pagar o resgate?</p>
+                        <a href="blog/ransomware.html" class="pub-card__link">
+                            Ler mais &rarr;
+                        </a>
+                    </article>
+
+                    <article class="pub-card" data-categories="academico">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--academico">Capítulo de livro</span>
+                        </div>
+                        <h3 class="pub-card__title">Fundamentos e Tendências em Inovação Tecnológica</h3>
+                        <p class="pub-card__desc">Capítulo publicado no Volume 2 da série sobre Fundamentos e Tendências em Inovação Tecnológica.</p>
+                        <a href="blog/livro-inovacao-tecnologica-vol2.html" class="pub-card__link">
+                            Ler mais &rarr;
+                        </a>
+                    </article>
+
+                    <article class="pub-card" data-categories="podcast">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--midia">Mídia</span>
+                        </div>
+                        <h3 class="pub-card__title">Entrevista InfoMoney &mdash; Pix com Open Banking é seguro?</h3>
+                        <p class="pub-card__desc">Entrevista concedida ao InfoMoney sobre segurança no ecossistema do Pix integrado ao Open Banking.</p>
+                        <a href="blog/entrevista-infomoney-pix-open-banking.html" class="pub-card__link">
+                            Ler mais &rarr;
+                        </a>
+                    </article>
+
+                    <article class="pub-card" data-categories="podcast">
+                        <div class="pub-card__meta">
+                            <span class="pub-tag pub-tag--midia">Mídia</span>
+                        </div>
+                        <h3 class="pub-card__title">Entrevista OBE &mdash; Open Finance e Iniciação de Pagamentos</h3>
+                        <p class="pub-card__desc">Entrevista para o Open Banking Experience sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos.</p>
+                        <a href="blog/entrevista-obe-open-finance.html" class="pub-card__link">
+                            Ler mais &rarr;
+                        </a>
+                    </article>
+
                 </div>
             </div>
+        </section>
 
-            <div class="portfolio-box">
-                <div class="portfolio-carousel">
-                    <div class="img-slide">
-                        <div class="img-item">
-                            <img src="images/portfolio1.jpg">
-                        </div>
-                        <div class="img-item">
-                            <img src="images/portfolio2.jpg">
-                        </div>
-                        <div class="img-item">
-                            <img src="images/portfolio3.jpg">
-                        </div>
-                        <div class="img-item">
-                            <img src="images/portfolio4.jpg">
-                        </div>
-                        <div class="img-item">
-                            <img src="images/portfolio5.jpg">
-                        </div>
-                        <div class="img-item">
-                            <img src="images/portfolio6.jpg">
-                        </div>
+        <!-- CONTATO -->
+        <section id="contato" class="section section--dark">
+            <div class="container contato__inner">
+                <div class="contato__intro">
+                    <h2 class="section-heading section-heading--light">Vamos conversar?</h2>
+                    <p>Aberto a conversas sobre cibersegurança, Open Finance, blockchain, colaborações acadêmicas ou oportunidades profissionais.</p>
+                    <div class="contato__links">
+                        <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" class="contato__link">
+                            <i class="bx bxl-linkedin-square" aria-hidden="true"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" class="contato__link">
+                            <i class="bx bxl-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="#" class="contato__link">
+                            <i class="bx bxl-youtube" aria-hidden="true"></i>
+                            <span>TechStudio</span>
+                        </a>
                     </div>
                 </div>
 
-                <div class="navigation">
-                    <button class="arrow-left disabled"><i class='bx bx-chevron-left'></i></button>
-                    <button class="arrow-right"><i class='bx bx-chevron-right'></i></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- contact section -->
-    <section class="contact">
-        <div class="contact-container">
-            <div class="contact-box">
-                <h2>Let's Work Together</h2>
-                <p class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, voluptatem illo magni similique velit at mollitia corporis quaerat eaque asperiores.</p>
-                <div class="contact-detail">
-                    <i class='bx bxs-phone'></i>
-                    <div class="detail">
-                        <p>Phone</p>
-                        <p>(+12) 345 678 910</p>
+                <form class="contato__form" id="contato-form" novalidate>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
                     </div>
-                </div>
-                <div class="contact-detail">
-                    <i class='bx bxs-envelope'></i>
-                    <div class="detail">
-                        <p>Email</p>
-                        <p>youremail@gmail.com</p>
+                    <div class="form-field">
+                        <label for="assunto">Assunto</label>
+                        <input type="text" id="assunto" name="assunto" placeholder="Sobre o que quer conversar?" required>
                     </div>
-                </div>
-                <div class="contact-detail">
-                    <i class='bx bxs-map'></i>
-                    <div class="detail">
-                        <p>Address</p>
-                        <p>123 Anywhere Street, Any City</p>
+                    <div class="form-field">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem..." required></textarea>
                     </div>
-                </div>
-            </div>
-
-            <div class="contact-box">
-                <form action="">
-                    <h2 class="heading">Contact <span>Me!</span></h2>
-                    <div class="field-box">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Email Address" required>
-                        <input type="text" placeholder="Phone Number" required>
-                        <input type="text" placeholder="Email Subject" required>
-                        <textarea name="" id="" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
+                    <button type="submit" class="btn btn--primary">Enviar mensagem</button>
                 </form>
             </div>
-        </div>
-    </section>
-    
+        </section>
 
-    <!-- custom js -->
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p class="footer__copy">&copy; 2026 Alexandre Siqueira. Feito com curiosidade.</p>
+            <div class="footer__social">
+                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bx bxl-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/TechstudioPod" target="_blank" rel="noopener" aria-label="YouTube TechStudio">
+                    <i class="bx bxl-youtube" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
     <script src="js/script.js"></script>
 </body>
 
