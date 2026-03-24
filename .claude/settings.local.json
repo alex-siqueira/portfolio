@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:alex5124.wixsite.com)"
+      "WebFetch(domain:alex5124.wixsite.com)",
+      "Bash(xargs sed:*)"
     ]
   }
 }

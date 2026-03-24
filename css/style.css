@@ -777,61 +777,77 @@ nav#nav {
     color: var(--text-dark);
 }
 
-/* Form */
-.contato__form {
+/* Contact groups */
+.contato__groups {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.4rem;
 }
 
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+.contato__group {
+    padding: 2.2rem 2.4rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(232, 234, 240, 0.1);
+    border-radius: 1.2rem;
 }
 
-.form-field {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.form-field label {
+.contato__group-title {
     font-family: var(--font-mono);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     font-weight: 500;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.6rem;
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid rgba(232, 234, 240, 0.08);
+}
+
+.contato__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contato__item {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.contato__item i {
+    font-size: 2.2rem;
+    color: rgba(232, 234, 240, 0.35);
+    flex-shrink: 0;
+    transition: color var(--transition);
+}
+
+.contato__item:hover i {
+    color: var(--accent);
+}
+
+.contato__item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.contato__item-label {
+    font-size: 1.2rem;
     color: rgba(232, 234, 240, 0.45);
 }
 
-.form-field input,
-.form-field textarea {
-    padding: 1.4rem 1.8rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1.5px solid rgba(232, 234, 240, 0.1);
-    border-radius: 0.8rem;
-    font-size: 1.5rem;
-    font-family: var(--font-sans);
+.contato__item-value {
+    font-size: 1.55rem;
+    font-weight: 500;
     color: var(--text-dark);
-    transition: border-color var(--transition), background var(--transition);
+    transition: color var(--transition);
 }
 
-.form-field input::placeholder,
-.form-field textarea::placeholder {
-    color: rgba(232, 234, 240, 0.22);
-}
-
-.form-field input:focus,
-.form-field textarea:focus {
-    outline: none;
-    border-color: var(--accent);
-    background: rgba(120, 157, 253, 0.05);
-}
-
-.form-field textarea {
-    resize: vertical;
-    min-height: 14rem;
+.contato__item:hover .contato__item-value {
+    color: var(--accent);
 }
 
 
