@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.description }}">
+    <meta name="author" content="Alexandre Siqueira">
+    <link rel="canonical" href="{{ page.url | prepend: site.url }}">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    {% if page.url == "/" %}
+      {% assign page_title = page.title %}
+    {% else %}
+      {% capture page_title %}{{ page.title }} — Alexandre Siqueira{% endcapture %}
+    {% endif %}
+
+    <meta property="og:type" content="{{ page.og_type | default: 'article' }}">
+    <meta property="og:site_name" content="Alexandre Siqueira">
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:description" content="{{ page.description }}">
+    <meta property="og:image" content="{{ site.url }}/images/eu.jpg">
+    <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page_title }}">
+    <meta name="twitter:description" content="{{ page.description }}">
+    <meta name="twitter:image" content="{{ site.url }}/images/eu.jpg">
+
+    {% if page.schema_type == 'Person' %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alexandre Siqueira",
+      "url": "{{ site.url }}",
+      "image": "{{ site.url }}/images/eu.jpg",
+      "jobTitle": "Cybersecurity Tech Leader",
+      "worksFor": {"@type": "Organization", "name": "Mercado Livre"},
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "Universidade Federal de São Paulo — UNIFESP"},
+        {"@type": "CollegeOrUniversity", "name": "Universidade Metodista de São Paulo"}
+      ],
+      "knowsAbout": ["Cibersegurança", "Open Finance", "Blockchain", "Identidade Digital", "Arquitetura de Software"],
+      "sameAs": [
+        "https://linkedin.com/in/siqueiraalexandre",
+        "https://github.com/alex-siqueira",
+        "https://www.youtube.com/TechstudioPod"
+      ]
+    }
+    </script>
+    {% elsif page.schema_type %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "{{ page.schema_type }}",
+      "headline": {{ page.title | jsonify }},
+      "datePublished": "{{ page.date | date: '%Y-%m-%d' }}",
+      "description": {{ page.description | jsonify }},
+      "url": "{{ page.url | prepend: site.url }}",
+      "author": {"@type": "Person", "name": "Alexandre Siqueira", "url": "{{ site.url }}"}
+    }
+    </script>
+    {% endif %}
+
+    <title>{{ page_title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    {% if page.url == "/" %}
+      {% assign nav_prefix = "" %}
+    {% else %}
+      {% assign nav_prefix = "/" %}
+    {% endif %}
+
+    <header id="header"{% unless page.url == "/" %} class="scrolled"{% endunless %}>
+        <div class="header-inner">
+            <a href="/" class="logo" aria-label="Voltar ao início">
+                <span class="logo-name">Alexandre Siqueira</span>
+            </a>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <i class="bx bx-menu" aria-hidden="true"></i>
+            </button>
+            <nav id="nav" aria-label="Navegação principal">
+                <a href="{{ nav_prefix }}#home" class="nav-link">Home</a>
+                <a href="{{ nav_prefix }}#sobre" class="nav-link">Sobre</a>
+                <a href="{{ nav_prefix }}#experiencia" class="nav-link">Experiência</a>
+                <a href="{{ nav_prefix }}#publicacoes" class="nav-link{% if page.nav_active == 'publicacoes' %} active{% endif %}">Publicações</a>
+                <a href="{{ nav_prefix }}#contato" class="nav-link">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p class="footer__copy">&copy; 2026 Alexandre Siqueira. Feito com curiosidade.</p>
+            <div class="footer__social">
+                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" aria-label="GitHub">
+                    <i class="bx bxl-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.youtube.com/TechstudioPod" target="_blank" rel="noopener" aria-label="YouTube TechStudio">
+                    <i class="bx bxl-youtube" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+
+</body>
+</html>
