@@ -1,77 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alexandre Siqueira — Especialista em cibersegurança, arquiteto de software, pesquisador e criador de conteúdo. Um olhar curioso sobre a tecnologia.">
-    <meta name="author" content="Alexandre Siqueira">
-    <link rel="canonical" href="https://alexandre.siqueira.me/">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Alexandre Siqueira">
-    <meta property="og:title" content="Alexandre Siqueira — Um olhar curioso sobre a tecnologia">
-    <meta property="og:description" content="Alexandre Siqueira — Especialista em cibersegurança, arquiteto de software, pesquisador e criador de conteúdo. Um olhar curioso sobre a tecnologia.">
-    <meta property="og:image" content="https://alexandre.siqueira.me/images/eu.jpg">
-    <meta property="og:url" content="https://alexandre.siqueira.me/">
-    <meta property="og:locale" content="pt_BR">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Alexandre Siqueira — Um olhar curioso sobre a tecnologia">
-    <meta name="twitter:description" content="Alexandre Siqueira — Especialista em cibersegurança, arquiteto de software, pesquisador e criador de conteúdo.">
-    <meta name="twitter:image" content="https://alexandre.siqueira.me/images/eu.jpg">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Alexandre Siqueira",
-      "url": "https://alexandre.siqueira.me",
-      "image": "https://alexandre.siqueira.me/images/eu.jpg",
-      "jobTitle": "Cybersecurity Tech Leader",
-      "worksFor": {"@type": "Organization", "name": "Mercado Livre"},
-      "alumniOf": [
-        {"@type": "CollegeOrUniversity", "name": "Universidade Federal de São Paulo — UNIFESP"},
-        {"@type": "CollegeOrUniversity", "name": "Universidade Metodista de São Paulo"}
-      ],
-      "knowsAbout": ["Cibersegurança", "Open Finance", "Blockchain", "Identidade Digital", "Arquitetura de Software"],
-      "sameAs": [
-        "https://linkedin.com/in/siqueiraalexandre",
-        "https://github.com/alex-siqueira",
-        "https://www.youtube.com/TechstudioPod"
-      ]
-    }
-    </script>
-    <title>Alexandre Siqueira — Um olhar curioso sobre a tecnologia</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-
-    <!-- HEADER -->
-    <header id="header">
-        <div class="header-inner">
-            <a href="#home" class="logo" aria-label="Ir para o início">
-                <span class="logo-name">Alexandre Siqueira</span>
-            </a>
-
-            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-                <i class="bx bx-menu" aria-hidden="true"></i>
-            </button>
-
-            <nav id="nav" aria-label="Navegação principal">
-                <a href="#home" class="nav-link active">Home</a>
-                <a href="#sobre" class="nav-link">Sobre</a>
-                <a href="#experiencia" class="nav-link">Experiência</a>
-                <a href="#publicacoes" class="nav-link">Publicações</a>
-                <a href="#contato" class="nav-link">Contato</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
+---
+layout: default
+title: "Alexandre Siqueira — Um olhar curioso sobre a tecnologia"
+description: "Alexandre Siqueira — Especialista em cibersegurança, arquiteto de software, pesquisador e criador de conteúdo. Um olhar curioso sobre a tecnologia."
+og_type: website
+schema_type: Person
+---
 
         <!-- HERO -->
         <section id="home" class="section section--dark hero">
@@ -111,11 +44,12 @@
             <div class="container sobre__inner">
                 <div class="sobre__bio">
                     <h2 class="section-heading">Sobre mim</h2>
-                    <p>Comecei escrevendo código para sistemas em empresas de telecom e mercado financeiro. Com o tempo, passei a pensar mais em como os sistemas <em>falham</em> do que em como funcionam — e foi assim que migrei naturalmente para arquitetura de software e, depois, para cibersegurança.</p>
-                    <p>Hoje lidero segurança no <strong>Mercado Livre</strong>, com foco nos produtos de criptoativos da maior fintech da América Latina. Antes disso, fui co-autor do <strong>Perfil de Segurança do Open Finance Brasil</strong> — o framework que estruturou as políticas de segurança de todo o ecossistema de Open Banking nacional.</p>
-                    <p>Meu mestrado na <strong>UNIFESP</strong> investigou identidades digitais em blockchain aplicadas à saúde: como criar prontuários médicos descentralizados sem comprometer a privacidade do paciente. O trabalho chegou à <strong>IEEE DApps 2023</strong> — uma das principais conferências de blockchain aplicado.</p>
-                    <p>Dei aulas de Cybersecurity &amp; Cyberlaw no MBA de Arquitetura de Soluções da <strong>Universidade Impacta</strong>, e discuto tecnologia no canal e podcast <strong>TechStudio</strong> — com menos buzzword e mais substância.</p>
-                    <p>Nos fins de semana, troco o monitor pelo telescópio. Sou astrônomo amador e pai — dois papéis que me ensinaram que o olhar curioso vale mais do que qualquer certificação.</p>
+                    <p class="sobre__lead">Eu construo e protejo o software que movimenta dinheiro.</p>
+                    <p>Comecei escrevendo código para telecom e mercado financeiro há mais de 20 anos. Enquanto trabalhava com prevenção a fraudes e detecção de perda de receita na <strong>Claro</strong>, fui percebendo um padrão: a maioria das fraudes, golpes e perdas de receita apontava para software mal construído. Foi aí que eu mergulhei de cabeça nessa loucura — peguei o livro <strong><em>19 Deadly Sins of Software Security</em></strong> e li de uma vez, como se fosse um romance. Esse foi o ponto de virada.</p>
+                    <p>O caminho de desenvolvedor para arquiteto e depois para segurança não era óbvio — e, sinceramente, a indústria de cyber não facilitou. Times de segurança tradicionalmente recrutam gente de infraestrutura, não de desenvolvimento. Mas entender como software é realmente construído te dá uma lente diferente sobre como ele quebra — e essa tem sido a minha vantagem.</p>
+                    <p>Hoje lidero a cibersegurança de produtos fintech no <strong>Mercado Livre</strong>, o maior ecossistema de e-commerce e fintech da América Latina. Meu time trabalha com as equipes de produtos e engenharia desde o início — garantindo que segurança faça parte de como as coisas são construídas, e não como um puxadinho depois. Durante esse tempo, também fui co-autor do <strong>Security Profile do Open Finance Brasil</strong> — o padrão de cibersegurança adotado em todo o ecossistema de open banking no país.</p>
+
+                    <p class="sobre__cta"><a href="#contato" class="btn btn--primary">Vamos conversar?</a></p>
                 </div>
 
                 <aside class="sobre__sidebar">
@@ -161,15 +95,19 @@
                     </div>
 
                     <div class="tag-cloud">
-                        <span class="tag">Cibersegurança</span>
+                        <span class="tag">AppSec</span>
+                        <span class="tag">Fintech Security</span>
+                        <span class="tag">API Security</span>
+                        <span class="tag">Threat Modeling</span>
+                        <span class="tag">Secure SDLC</span>
+                        <span class="tag">DevSecOps</span>
+                        <span class="tag">IAM</span>
                         <span class="tag">Open Finance</span>
                         <span class="tag">Blockchain</span>
-                        <span class="tag">Identidade Digital</span>
-                        <span class="tag">Cyberlaw</span>
-                        <span class="tag">Arquitetura de Software</span>
-                        <span class="tag">Self-Sovereign Identity</span>
-                        <span class="tag">Criptoativos</span>
-                        <span class="tag">Privacy</span>
+                        <span class="tag">AWS</span>
+                        <span class="tag">Fireblocks</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">Arquitetura de Segurança</span>
                     </div>
                 </aside>
             </div>
@@ -222,7 +160,7 @@
                             <span class="timeline__period">2014 &ndash; 2016</span>
                             <h3 class="timeline__role">Architecture Specialist</h3>
                             <p class="timeline__company">HSBC</p>
-                            <p class="timeline__desc">Líder do time local de desenvolvimento do projeto “Brazil Post Trade & Integration”, plataforma de BackOffice de tesouraria para derivativos de balcão.</p>
+                            <p class="timeline__desc">Líder do time local de desenvolvimento do projeto "Brazil Post Trade &amp; Integration", plataforma de BackOffice de tesouraria para derivativos de balcão.</p>
                         </div>
                     </div>
 
@@ -426,11 +364,11 @@
                     <div class="contato__group">
                         <h3 class="contato__group-title">Acadêmico</h3>
                         <div class="contato__items">
-                            <a href="mailto:alexandre.siqueira@unifesp.br" class="contato__item">
+                            <a href="mailto:alexandre.siqueira&#64;unifesp&#46;br" class="contato__item">
                                 <i class="bx bx-envelope" aria-hidden="true"></i>
                                 <div class="contato__item-text">
                                     <span class="contato__item-label">E-mail</span>
-                                    <span class="contato__item-value">alexandre.siqueira@unifesp.br</span>
+                                    <span class="contato__item-value">alexandre.siqueira&#64;unifesp&#46;br</span>
                                 </div>
                             </a>
                             <a href="https://lattes.cnpq.br/5550434548511523" target="_blank" rel="noopener" class="contato__item">
@@ -446,11 +384,11 @@
                     <div class="contato__group">
                         <h3 class="contato__group-title">Profissional</h3>
                         <div class="contato__items">
-                            <a href="mailto:alexandre.siqueira@mercadolivre.com" class="contato__item">
+                            <a href="mailto:alexandre.siqueira&#64;mercadolivre&#46;com" class="contato__item">
                                 <i class="bx bx-envelope" aria-hidden="true"></i>
                                 <div class="contato__item-text">
                                     <span class="contato__item-label">E-mail</span>
-                                    <span class="contato__item-value">alexandre.siqueira@mercadolivre.com</span>
+                                    <span class="contato__item-value">alexandre.siqueira&#64;mercadolivre&#46;com</span>
                                 </div>
                             </a>
                         </div>
@@ -459,27 +397,3 @@
                 </div>
             </div>
         </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container footer__inner">
-            <p class="footer__copy">&copy; 2026 Alexandre Siqueira. Feito com curiosidade.</p>
-            <div class="footer__social">
-                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" aria-label="GitHub">
-                    <i class="bx bxl-github" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <i class="bx bxl-linkedin" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.youtube.com/TechstudioPod" target="_blank" rel="noopener" aria-label="YouTube TechStudio">
-                    <i class="bx bxl-youtube" aria-hidden="true"></i>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-
-</html>

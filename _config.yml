@@ -1,0 +1,26 @@
+title: Alexandre Siqueira
+description: Especialista em cibersegurança, arquiteto de software, pesquisador e criador de conteúdo.
+url: "https://alexandre.siqueira.me"
+baseurl: ""
+
+permalink: /blog/:title.html
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - CLAUDE.md
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      nav_active: publicacoes
+  - scope:
+      path: "blog"
+    values:
+      nav_active: publicacoes
