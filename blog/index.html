@@ -7,7 +7,7 @@ og_type: website
 
         <div class="blog-header">
             <div class="container">
-                <a href="/" class="blog-back">
+                <a href="{{ '/' | relative_url }}" class="blog-back">
                     <i class="bx bx-arrow-back" aria-hidden="true"></i> Voltar ao site
                 </a>
                 <h1>Publicações &amp; Mídia</h1>
@@ -34,7 +34,7 @@ og_type: website
                         </div>
                         <h2 class="pub-card__title">{{ post.title }}</h2>
                         <p class="pub-card__desc">{{ post.card_description }}</p>
-                        <a href="{{ post.url }}" class="pub-card__link">Ler mais &rarr;</a>
+                        <a href="{{ post.url | relative_url }}" class="pub-card__link">Ler mais &rarr;</a>
                     </article>
                     {% endfor %}
                 </div>
