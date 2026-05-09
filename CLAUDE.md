@@ -4,45 +4,59 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-This is a static personal portfolio website for Alexandre Siqueira — a cybersecurity professional. It is a single-page application built with vanilla HTML, CSS, and JavaScript. No build tools, package managers, or frameworks are used.
+Static personal portfolio website for Alexandre Siqueira — a cybersecurity professional. The main page (`index.html`) is plain HTML/CSS/JS. The blog is powered by Jekyll 4.3 and deployed to GitHub Pages.
 
 ## Development
 
-To preview the site, open `index.html` directly in a browser or serve it with any static file server:
+Serve the full site (Jekyll + main page) locally:
+
+```bash
+bundle exec jekyll serve
+# visit http://localhost:4000
+```
+
+For main page only (no Jekyll needed):
 
 ```bash
 python3 -m http.server 8080
-# then visit http://localhost:8080
+```
+
+Build static output to `_site/`:
+
+```bash
+bundle exec jekyll build
 ```
 
 ## Architecture
 
-The site is a single HTML page (`index.html`) with five sections that function as "pages":
-- **Home** — bio and social links
-- **Services** (Atividades) — service cards
-- **Resume** (Currículo) — tabbed panel with Experience/Education/Skills/About
-- **Portfolio** — image carousel paired with project detail cards
-- **Contact** — contact info and form
+### Main page (`index.html`)
+A single scrolling page with anchor sections: `#home`, `#sobre`, `#experiencia`, `#publicacoes`, `#contato`. Not processed by Jekyll — served as-is.
 
-### Navigation model (`js/script.js`)
-Navigation is fully client-side. Sections are stacked absolutely and toggled visible via `.active` class. Clicking a nav link triggers an animated transition: bars animate in/out, the header and target section fade in after a ~1.1s delay. The nav link index directly maps to the section index in the DOM.
+### JavaScript (`js/script.js`)
+Four independent behaviors:
+- **Header**: adds `.scrolled` class when `scrollY > 20` (passive scroll listener)
+- **Mobile menu**: toggles `.active` on `#nav`, swaps hamburger/close icon, sets `aria-expanded`
+- **Scroll spy**: `IntersectionObserver` with `rootMargin: '-40% 0px -55% 0px'` syncs `.active` on `.nav-link` elements
+- **Timeline tabs**: `.timeline-tab[data-tab]` shows `#timeline-{target}`, hides others via `.hidden`
+- **Publications filter**: `.filter-btn[data-filter]` toggles `.hidden` on `.pub-card` by `card.dataset.categories`
+
+### Blog (Jekyll)
+- **Posts**: `_posts/YYYY-MM-DD-slug.md` — Jekyll convention, rendered via `_layouts/post.html`
+- **Listing**: `blog/index.html` — uses `{% for post in site.posts %}` to auto-generate cards
+- **Layouts**: `_layouts/default.html` (shared shell with header/footer/SEO), `_layouts/post.html` (extends default, adds post header and author footer)
+
+#### Post front matter fields
+All posts require: `title`, `date`, `description`, `excerpt_text`, `tag_label`, `tag_class`, `categories`, `card_description`, `schema_type`, `date_display`.
+
+`tag_class` controls the badge color (e.g. `pub-tag--podcast`, `pub-tag--academico`). `categories` is a YAML list used by the JS filter on `blog/index.html`.
 
 ### CSS design system (`css/style.css`)
-CSS custom properties define the palette:
-- `--bg-color`: `#101935` (dark navy)
-- `--second-bg-color`: `#564787` (purple)
-- `--main-color`: `#9AD4D6` (teal accent)
-- `--white-color`: `#F2FDFF`
+Uses CSS custom properties. Key tokens:
+- `--dark-bg`, `--light-surface`, `--accent`, `--accent-dark`
+- `--font-serif` (Lora), `--font-sans` (Inter), `--font-mono` (Fira Code)
+- `html { font-size: 62.5% }` → `1rem = 10px`
 
-Font size uses `rem` units with `html { font-size: 62.5% }` (so `1rem = 10px`). Responsive breakpoints: 1200px, 992px, 810px, 768px, 600px, 450px, 400px.
+Sections alternate between `.section--dark` and `.section--light`.
 
-### Portfolio carousel (`js/script.js`)
-The carousel uses CSS `translateX` to slide `.img-slide`. The `index` variable (0–5) tracks the current slide and maps to the matching `.portfolio-detail` card shown on the left. Arrow buttons gain/lose `.disabled` at the bounds.
-
-## Content status
-
-Several sections still contain placeholder (lorem ipsum) content from the original template and need to be replaced with Alexandre's actual information:
-- Services section (entirely placeholder)
-- Resume section — Experience, Education, Skills, About Me tabs
-- Portfolio section — project descriptions and links
-- Contact section — phone, email, address
+### Deployment
+Targets GitHub Pages. Jekyll builds `_site/` which is what gets published. `firebase.json` and `.firebaserc` have been removed.
