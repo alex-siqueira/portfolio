@@ -11,7 +11,7 @@ schema_type: BlogPosting
 date_display: "10 de fevereiro de 2016"
 ---
 
-<img src="/images/cryptolocker-ransomware-demands-300-to-decrypt-your-files.png" alt="CryptoLocker ransomware screenshot"/>
+<img src="{{ '/images/cryptolocker-ransomware-demands-300-to-decrypt-your-files.png' | relative_url }}" alt="CryptoLocker ransomware screenshot"/>
 
 <p>Na paranoica década de 1980, poucas coisas assustavam tanto quanto sequestros. Naquela época, sequestros eram crimes relativamente comuns e amplamente cobertos pelos noticiários. Empresários, artistas, políticos, parentes de celebridades e até pessoas comuns eram alvos de inescrupulosos bandidos, que os tiravam de suas famílias e cobravam somas enormes em dinheiro para devolver-lhes a liberdade e permitir que continuassem vivos.</p>
 
