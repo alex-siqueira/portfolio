@@ -66,7 +66,7 @@
     <title>{{ page_title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
 </head>
@@ -81,44 +81,60 @@
 
     <header id="header"{% unless page.url == "/" %} class="scrolled"{% endunless %}>
         <div class="header-inner">
-            <a href="{{ '/' | relative_url }}" class="logo" aria-label="Voltar ao início">
-                <span class="logo-name">Alexandre Siqueira</span>
+            <a href="{{ '/' | relative_url }}" class="logo">
+                <span class="logo-mark">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+                    </svg>
+                </span>
+                <span class="logo-name">alexandre siqueira</span>
             </a>
+            <div class="nav-actions">
+                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" class="nav-icon" aria-label="GitHub">
+                    <i data-lucide="github"></i>
+                </a>
+                <a href="{{ nav_prefix }}#contato" class="btn btn--primary btn--sm">conversar →</a>
+            </div>
             <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-                <i class="bx bx-menu" aria-hidden="true"></i>
+                <i data-lucide="menu"></i>
             </button>
-            <nav id="nav" aria-label="Navegação principal">
-                <a href="{{ nav_prefix }}#home" class="nav-link">Home</a>
-                <a href="{{ nav_prefix }}#sobre" class="nav-link">Sobre</a>
-                <a href="{{ nav_prefix }}#experiencia" class="nav-link">Experiência</a>
-                <a href="{{ nav_prefix }}#publicacoes" class="nav-link{% if page.nav_active == 'publicacoes' %} active{% endif %}">Publicações</a>
-                <a href="{{ nav_prefix }}#contato" class="nav-link">Contato</a>
-            </nav>
         </div>
     </header>
+
+    <nav id="nav" aria-label="Navegação principal">
+        <a href="{{ nav_prefix }}#home" class="nav-link">home</a>
+        <a href="{{ nav_prefix }}#sobre" class="nav-link">sobre</a>
+        <a href="{{ nav_prefix }}#experiencia" class="nav-link">experiência</a>
+        <a href="{{ nav_prefix }}#publicacoes" class="nav-link{% if page.nav_active == 'publicacoes' %} active{% endif %}">publicações</a>
+        <a href="{{ nav_prefix }}#contato" class="nav-link">contato</a>
+    </nav>
 
     <main>
         {{ content }}
     </main>
 
     <footer class="footer">
-        <div class="container footer__inner">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="logo-mark">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+                    </svg>
+                </span>
+                <span>alexandre siqueira</span>
+            </div>
             <p class="footer__copy">&copy; 2026 Alexandre Siqueira. Feito com curiosidade.</p>
             <div class="footer__social">
-                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" aria-label="GitHub">
-                    <i class="bx bxl-github" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <i class="bx bxl-linkedin" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.youtube.com/TechstudioPod" target="_blank" rel="noopener" aria-label="YouTube TechStudio">
-                    <i class="bx bxl-youtube" aria-hidden="true"></i>
-                </a>
+                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
+                <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+                <a href="https://www.youtube.com/TechstudioPod" target="_blank" rel="noopener" aria-label="YouTube"><i data-lucide="youtube"></i></a>
             </div>
         </div>
     </footer>
 
     <script src="{{ '/js/script.js' | relative_url }}"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script>if (window.lucide) lucide.createIcons();</script>
 
 </body>
 </html>

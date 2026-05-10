@@ -20,12 +20,13 @@ window.addEventListener('scroll', () => {
    ========================================= */
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.getElementById('nav');
-const menuIcon = menuToggle.querySelector('i');
 
 menuToggle.addEventListener('click', () => {
     const isOpen = nav.classList.toggle('active');
     menuToggle.setAttribute('aria-expanded', String(isOpen));
-    menuIcon.className = isOpen ? 'bx bx-x' : 'bx bx-menu';
+    const menuIcon = menuToggle.querySelector('i[data-lucide]');
+    menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+    if (window.lucide) window.lucide.createIcons({ nodes: [menuIcon] });
 });
 
 // Close mobile menu when a nav link is clicked
@@ -33,7 +34,9 @@ nav.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         nav.classList.remove('active');
         menuToggle.setAttribute('aria-expanded', 'false');
-        menuIcon.className = 'bx bx-menu';
+        const menuIcon = menuToggle.querySelector('i[data-lucide]');
+        menuIcon.setAttribute('data-lucide', 'menu');
+        if (window.lucide) window.lucide.createIcons({ nodes: [menuIcon] });
     });
 });
 
@@ -102,3 +105,7 @@ filterBtns.forEach(btn => {
         });
     });
 });
+
+
+/* Init Lucide icons */
+if (window.lucide) window.lucide.createIcons();

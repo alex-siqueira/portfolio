@@ -6,17 +6,18 @@ og_type: website
 ---
 
         <div class="blog-header">
-            <div class="container">
+            <div class="blog-header__inner">
                 <a href="{{ '/' | relative_url }}" class="blog-back">
-                    <i class="bx bx-arrow-back" aria-hidden="true"></i> Voltar ao site
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                    Voltar ao site
                 </a>
                 <h1>Publicações &amp; Mídia</h1>
                 <p>Artigos, podcasts, publicações acadêmicas e aparições na mídia.</p>
             </div>
         </div>
 
-        <section class="blog-listing section section--light">
-            <div class="container">
+        <section class="blog-listing">
+            <div class="blog-listing__inner">
 
                 <div class="filter-bar" role="group" aria-label="Filtrar por categoria">
                     <button class="filter-btn active" data-filter="all">Tudo</button>
@@ -29,12 +30,13 @@ og_type: website
                 <div class="pub-grid" id="pub-grid">
                     {% for post in site.posts %}
                     <article class="pub-card" data-categories="{{ post.categories | join: ' ' }}">
-                        <div class="pub-card__meta">
-                            <span class="pub-tag {{ post.tag_class }}">{{ post.tag_label }}</span>
-                        </div>
+                        <div class="pub-tag {{ post.tag_class }}">{{ post.tag_label }}</div>
                         <h2 class="pub-card__title">{{ post.title }}</h2>
                         <p class="pub-card__desc">{{ post.card_description }}</p>
-                        <a href="{{ post.url | relative_url }}" class="pub-card__link">Ler mais &rarr;</a>
+                        <div class="pub-card__foot">
+                            <span class="pub-card__meta-tag">{{ post.date_display }}</span>
+                            <a href="{{ post.url | relative_url }}" class="pub-card__link">ler mais <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
+                        </div>
                     </article>
                     {% endfor %}
                 </div>
