@@ -576,7 +576,7 @@ main { flex: 1; position: relative; z-index: 1; }
   letter-spacing: 0.08em;
   margin-bottom: 8px;
 }
-.timeline__company svg { width: 14px; height: 14px; color: var(--accent); stroke-width: 1.75; }
+.timeline__company svg { width: 14px; height: 14px; color: var(--accent); stroke-width: 1.75; flex-shrink: 0; }
 
 .timeline__role {
   font-family: var(--ff-display);
