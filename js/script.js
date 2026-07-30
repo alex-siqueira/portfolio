@@ -21,23 +21,20 @@ window.addEventListener('scroll', () => {
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.getElementById('nav');
 
-menuToggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('active');
+// aria-expanded is the single source of truth — the CSS swaps the icon from it
+function setMenu(isOpen) {
+    nav.classList.toggle('active', isOpen);
     menuToggle.setAttribute('aria-expanded', String(isOpen));
-    const menuIcon = menuToggle.querySelector('i[data-lucide]');
-    menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
-    if (window.lucide) window.lucide.createIcons({ nodes: [menuIcon] });
+    menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+}
+
+menuToggle.addEventListener('click', () => {
+    setMenu(!nav.classList.contains('active'));
 });
 
 // Close mobile menu when a nav link is clicked
 nav.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        const menuIcon = menuToggle.querySelector('i[data-lucide]');
-        menuIcon.setAttribute('data-lucide', 'menu');
-        if (window.lucide) window.lucide.createIcons({ nodes: [menuIcon] });
-    });
+    link.addEventListener('click', () => setMenu(false));
 });
 
 
@@ -106,6 +103,3 @@ filterBtns.forEach(btn => {
     });
 });
 
-
-/* Init Lucide icons */
-if (window.lucide) window.lucide.createIcons();

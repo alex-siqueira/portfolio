@@ -241,6 +241,10 @@ main { flex: 1; position: relative; z-index: 1; }
 
 .menu-toggle { display: none; color: var(--fg); padding: 6px; }
 .menu-toggle svg { width: 22px; height: 22px; stroke-width: 1.75; }
+/* Icon follows aria-expanded — no JS icon swapping */
+.menu-toggle__close { display: none; }
+.menu-toggle[aria-expanded="true"] .menu-toggle__open { display: none; }
+.menu-toggle[aria-expanded="true"] .menu-toggle__close { display: block; }
 
 /* 8. HERO */
 #home {
