@@ -1,7 +1,7 @@
 ---
 title: "Entrevista OBE — Open Finance e Iniciação de Pagamentos"
 date: 2022-07-22
-description: "Entrevista para o Open Banking Experience sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos."
+description: "Entrevista para a Open Banking Excellence sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos."
 excerpt_text: "Entrevista para o Open Banking Excellence sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos."
 tag_label: "Mídia"
 tag_class: "pub-tag--midia"

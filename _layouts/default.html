@@ -8,6 +8,7 @@
     <meta name="author" content="Alexandre Siqueira">
     <link rel="canonical" href="{{ page.url | prepend: site.url }}">
     <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
+    {% feed_meta %}
 
     {% if page.url == "/" %}
       {% assign page_title = page.title %}
@@ -19,13 +20,17 @@
     <meta property="og:site_name" content="Alexandre Siqueira">
     <meta property="og:title" content="{{ page_title }}">
     <meta property="og:description" content="{{ page.description }}">
-    <meta property="og:image" content="{{ site.url }}/images/eu.jpg">
+    <meta property="og:image" content="{{ site.url }}/images/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Alexandre Siqueira — Um olhar curioso sobre a tecnologia">
     <meta property="og:url" content="{{ page.url | prepend: site.url }}">
     <meta property="og:locale" content="pt_BR">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ page_title }}">
     <meta name="twitter:description" content="{{ page.description }}">
-    <meta name="twitter:image" content="{{ site.url }}/images/eu.jpg">
+    <meta name="twitter:image" content="{{ site.url }}/images/og-cover.jpg">
+    <meta name="twitter:image:alt" content="Alexandre Siqueira — Um olhar curioso sobre a tecnologia">
 
     {% if page.schema_type == 'Person' %}
     <script type="application/ld+json">
