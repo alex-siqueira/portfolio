@@ -612,6 +612,19 @@ main { flex: 1; position: relative; z-index: 1; }
 .filter-btn:hover { border-color: var(--border-strong); color: var(--fg); }
 .filter-btn.active { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); font-weight: 500; }
 
+/* Visually hidden but announced by screen readers, e.g. the publications filter's live count. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .pub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
 .pub-card {

@@ -107,6 +107,7 @@ timelineTabs.forEach(tab => {
    ========================================= */
 const filterBtns = document.querySelectorAll('.filter-btn');
 const pubCards = document.querySelectorAll('.pub-card');
+const pubFilterStatus = document.getElementById('pub-filter-status');
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -118,14 +119,23 @@ filterBtns.forEach(btn => {
             b.setAttribute('aria-pressed', String(isCurrent));
         });
 
+        let visibleCount = 0;
         pubCards.forEach(card => {
+            let isVisible;
             if (filter === 'all') {
-                card.classList.remove('hidden');
+                isVisible = true;
             } else {
                 const categories = card.dataset.categories || '';
-                card.classList.toggle('hidden', !categories.includes(filter));
+                isVisible = categories.includes(filter);
             }
+            card.classList.toggle('hidden', !isVisible);
+            if (isVisible) visibleCount++;
         });
+
+        if (pubFilterStatus) {
+            const noun = visibleCount === 1 ? 'publicação encontrada' : 'publicações encontradas';
+            pubFilterStatus.textContent = `${visibleCount} ${noun}`;
+        }
     });
 });
 

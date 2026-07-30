@@ -26,6 +26,7 @@ og_type: website
                     <button class="filter-btn" data-filter="seguranca" aria-pressed="false">Segurança &amp; Privacidade</button>
                     <button class="filter-btn" data-filter="academico" aria-pressed="false">Publicações Acadêmicas</button>
                 </div>
+                <p id="pub-filter-status" class="sr-only" role="status" aria-live="polite"></p>
 
                 <div class="pub-grid" id="pub-grid">
                     {% for post in site.posts %}
