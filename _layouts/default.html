@@ -117,7 +117,7 @@
         <a href="{{ nav_prefix }}#home" class="nav-link">home</a>
         <a href="{{ nav_prefix }}#sobre" class="nav-link">sobre</a>
         <a href="{{ nav_prefix }}#experiencia" class="nav-link">experiência</a>
-        <a href="{{ nav_prefix }}#publicacoes" class="nav-link{% if page.nav_active == 'publicacoes' %} active{% endif %}">publicações</a>
+        <a href="{{ nav_prefix }}#publicacoes" class="nav-link{% if page.nav_active == 'publicacoes' %} active{% endif %}"{% if page.nav_active == 'publicacoes' %} aria-current="page"{% endif %}>publicações</a>
         <a href="{{ nav_prefix }}#contato" class="nav-link">contato</a>
     </nav>
 

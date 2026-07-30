@@ -49,7 +49,10 @@ const spyObserver = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
             navLinks.forEach(link => {
-                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                const isCurrent = link.getAttribute('href') === `#${id}`;
+                link.classList.toggle('active', isCurrent);
+                if (isCurrent) link.setAttribute('aria-current', 'true');
+                else link.removeAttribute('aria-current');
             });
         }
     });
@@ -64,17 +67,37 @@ sections.forEach(section => spyObserver.observe(section));
 /* =========================================
    TIMELINE TABS
    ========================================= */
-const timelineTabs = document.querySelectorAll('.timeline-tab');
+const timelineTabs = [...document.querySelectorAll('.timeline-tab')];
+
+function selectTab(tab, moveFocus) {
+    timelineTabs.forEach(t => {
+        const isCurrent = t === tab;
+        t.classList.toggle('active', isCurrent);
+        t.setAttribute('aria-selected', String(isCurrent));
+        // roving tabindex: only the selected tab is in the tab order
+        t.tabIndex = isCurrent ? 0 : -1;
+        document.getElementById(`timeline-${t.dataset.tab}`).classList.toggle('hidden', !isCurrent);
+    });
+    if (moveFocus) tab.focus();
+}
 
 timelineTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = tab.dataset.tab;
+    tab.addEventListener('click', () => selectTab(tab));
 
-        timelineTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+    // arrow keys move between tabs, as expected of a tablist
+    tab.addEventListener('keydown', event => {
+        const last = timelineTabs.length - 1;
+        const i = timelineTabs.indexOf(tab);
+        let next;
 
-        document.querySelectorAll('.timeline').forEach(tl => tl.classList.add('hidden'));
-        document.getElementById(`timeline-${target}`).classList.remove('hidden');
+        if (event.key === 'ArrowRight') next = timelineTabs[i === last ? 0 : i + 1];
+        else if (event.key === 'ArrowLeft') next = timelineTabs[i === 0 ? last : i - 1];
+        else if (event.key === 'Home') next = timelineTabs[0];
+        else if (event.key === 'End') next = timelineTabs[last];
+        else return;
+
+        event.preventDefault();
+        selectTab(next, true);
     });
 });
 
@@ -89,8 +112,11 @@ filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const filter = btn.dataset.filter;
 
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        filterBtns.forEach(b => {
+            const isCurrent = b === btn;
+            b.classList.toggle('active', isCurrent);
+            b.setAttribute('aria-pressed', String(isCurrent));
+        });
 
         pubCards.forEach(card => {
             if (filter === 'all') {

@@ -50,6 +50,12 @@ a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 img { display: block; max-width: 100%; }
 
+/* Every control here is custom-styled, so the focus ring has to be explicit */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 /* 3. BASE */
 body {
   background: var(--bg);
@@ -942,4 +948,15 @@ main { flex: 1; position: relative; z-index: 1; }
   .timeline__axis { display: none; }
   .timeline__card { padding-bottom: var(--s-6); border-left: 2px solid var(--border); padding-left: var(--s-4); margin-left: 4px; }
   .timeline__period { margin-bottom: var(--s-2); }
+}
+
+/* 17. REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

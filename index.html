@@ -43,7 +43,7 @@ schema_type: Person
         <section id="sobre">
             <div class="sobre__inner">
                 <div class="sobre__content">
-                    <span class="section-num">— sobre mim</span>
+                    <h2 class="section-num">— sobre mim</h2>
                     <p class="sobre__lead">Eu construo e protejo o software que <em class="display-em">movimenta dinheiro.</em></p>
                     <div class="sobre__body">
                         <p>Comecei escrevendo código para telecom e mercado financeiro há mais de 20 anos. Enquanto trabalhava com prevenção a fraudes e detecção de perda de receita na <strong>Claro</strong>, fui percebendo um padrão: a maioria das fraudes, golpes e perdas de receita apontava para software mal construído. Foi aí que eu mergulhei de cabeça nessa loucura — peguei o livro <strong><em>19 Deadly Sins of Software Security</em></strong> e li de uma vez, como se fosse um romance. Esse foi o ponto de virada.</p>
@@ -125,14 +125,14 @@ schema_type: Person
         <!-- EXPERIÊNCIA -->
         <section id="experiencia">
             <div class="experiencia__inner">
-                <span class="section-num">— trajetória</span>
+                <h2 class="section-num">— trajetória</h2>
 
-                <div class="timeline-tabs" role="group" aria-label="Selecionar trajetória">
-                    <button class="timeline-tab active" data-tab="profissional">Profissional</button>
-                    <button class="timeline-tab" data-tab="academico">Acadêmica</button>
+                <div class="timeline-tabs" role="tablist" aria-label="Selecionar trajetória">
+                    <button class="timeline-tab active" id="tab-profissional" role="tab" data-tab="profissional" aria-selected="true" aria-controls="timeline-profissional">Profissional</button>
+                    <button class="timeline-tab" id="tab-academico" role="tab" data-tab="academico" aria-selected="false" aria-controls="timeline-academico" tabindex="-1">Acadêmica</button>
                 </div>
 
-                <div class="timeline" id="timeline-profissional">
+                <div class="timeline" id="timeline-profissional" role="tabpanel" aria-labelledby="tab-profissional" tabindex="0">
 
                     <div class="timeline__item current">
                         <div class="timeline__period">
@@ -219,7 +219,7 @@ schema_type: Person
 
                 </div>
 
-                <div class="timeline hidden" id="timeline-academico">
+                <div class="timeline hidden" id="timeline-academico" role="tabpanel" aria-labelledby="tab-academico" tabindex="0">
 
                     <div class="timeline__item">
                         <span class="timeline__period">Mestrado</span>
@@ -260,14 +260,14 @@ schema_type: Person
         <!-- PUBLICAÇÕES -->
         <section id="publicacoes">
             <div class="publicacoes__inner">
-                <span class="section-num">— publicações &amp; mídia</span>
+                <h2 class="section-num">— publicações &amp; mídia</h2>
 
                 <div class="filter-bar" role="group" aria-label="Filtrar publicações por categoria">
-                    <button class="filter-btn active" data-filter="all">Tudo</button>
-                    <button class="filter-btn" data-filter="podcast">Podcast &amp; Mídia</button>
-                    <button class="filter-btn" data-filter="blockchain">Blockchain &amp; SSI</button>
-                    <button class="filter-btn" data-filter="seguranca">Segurança &amp; Privacidade</button>
-                    <button class="filter-btn" data-filter="academico">Publicações Acadêmicas</button>
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">Tudo</button>
+                    <button class="filter-btn" data-filter="podcast" aria-pressed="false">Podcast &amp; Mídia</button>
+                    <button class="filter-btn" data-filter="blockchain" aria-pressed="false">Blockchain &amp; SSI</button>
+                    <button class="filter-btn" data-filter="seguranca" aria-pressed="false">Segurança &amp; Privacidade</button>
+                    <button class="filter-btn" data-filter="academico" aria-pressed="false">Publicações Acadêmicas</button>
                 </div>
 
                 <div class="pub-grid" id="pub-grid">
@@ -397,7 +397,7 @@ schema_type: Person
         <section id="contato">
             <div class="contato__inner">
                 <div class="contato__intro">
-                    <p class="contato__lead">Vamos <em class="display-em">conversar?</em></p>
+                    <h2 class="contato__lead">Vamos <em class="display-em">conversar?</em></h2>
                     <p class="contato__body">Se algo na minha trajetória ou produção acadêmica fez você querer continuar a conversa — seja uma parceria, uma oportunidade profissional ou simplesmente deixar um olá — fique à vontade para entrar em contato: ficarei feliz em responder.</p>
                     <div class="contato__social">
                         <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" class="contato__social-link" aria-label="LinkedIn">
