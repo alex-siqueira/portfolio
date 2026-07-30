@@ -57,13 +57,13 @@ This replaced Lucide and Boxicons, which together cost ~218KB over the wire to d
 
 ### Blog (Jekyll)
 - **Posts**: `_posts/YYYY-MM-DD-slug.md` — Jekyll convention, rendered via `_layouts/post.html`
-- **Listing**: `blog/index.html` — uses `{% for post in site.posts %}` to auto-generate cards
+- **Listing**: `blog/index.html` and the publications grid on `index.html` both loop `{% for post in site.posts %}` and render `_includes/pub-card.html` for each post — same partial, same data, so the two can't diverge again. `index.html` passes `heading="h3"` (nested under its `<h2>` section heading), `blog/index.html` passes `heading="h2"` (nested under its `<h1>` page heading).
 - **Layouts**: `_layouts/default.html` (shared shell with header/footer/SEO), `_layouts/post.html` (extends default, adds post header and author footer)
 
 #### Post front matter fields
-All posts require: `title`, `date`, `description`, `excerpt_text`, `tag_label`, `tag_class`, `categories`, `card_description`, `schema_type`, `date_display`.
+All posts require: `title`, `date`, `description`, `excerpt_text`, `tag_label`, `tag_class`, `tag_icon`, `categories`, `card_description`, `schema_type`, `date_display`.
 
-`tag_class` controls the badge color (e.g. `pub-tag--podcast`, `pub-tag--academico`). `categories` is a YAML list used by the JS filter on `blog/index.html`.
+`tag_class` controls the badge color (e.g. `pub-tag--podcast`, `pub-tag--academico`). `tag_icon` is the icon name passed to `_includes/icon.html` inside the badge — `tag_class` alone isn't enough because `pub-tag--academico` covers two different icons (`book-open` for book chapters, `presentation` for conference papers). `categories` is a YAML list used by the JS filter on both `index.html` and `blog/index.html`.
 
 ### CSS design system (`css/style.css`)
 Single file, no preprocessor, organized in 16 numbered sections (`/* 1. TOKENS */` … `/* 16. RESPONSIVE */`). Design direction is "Builder Terminal" — one dark theme throughout, no light/dark section alternation.

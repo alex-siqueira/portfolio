@@ -5,6 +5,7 @@ description: "Uma reflexão sobre privacidade na era das redes sociais e os meca
 excerpt_text: "Não é só porque um recado no quadro de avisos do condomínio foi escrito para os moradores, que só os moradores vão ler."
 tag_label: "Blog"
 tag_class: "pub-tag--blog"
+tag_icon: "rss"
 categories: [seguranca]
 card_description: "Não é só porque um recado no quadro de avisos do condomínio foi escrito para os moradores, que só os moradores vão ler."
 schema_type: BlogPosting

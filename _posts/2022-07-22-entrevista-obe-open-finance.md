@@ -5,6 +5,7 @@ description: "Entrevista para a Open Banking Excellence sobre a iniciativa do Op
 excerpt_text: "Entrevista para o Open Banking Excellence sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos."
 tag_label: "Mídia"
 tag_class: "pub-tag--midia"
+tag_icon: "mic"
 categories: [podcast]
 card_description: "Entrevista para o Open Banking Excellence sobre a iniciativa do Open Finance Brasil e os mecanismos de iniciação de pagamentos."
 schema_type: BlogPosting

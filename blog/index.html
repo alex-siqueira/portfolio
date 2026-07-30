@@ -29,15 +29,7 @@ og_type: website
 
                 <div class="pub-grid" id="pub-grid">
                     {% for post in site.posts %}
-                    <article class="pub-card" data-categories="{{ post.categories | join: ' ' }}">
-                        <div class="pub-tag {{ post.tag_class }}">{{ post.tag_label }}</div>
-                        <h2 class="pub-card__title">{{ post.title }}</h2>
-                        <p class="pub-card__desc">{{ post.card_description }}</p>
-                        <div class="pub-card__foot">
-                            <span class="pub-card__meta-tag">{{ post.date_display }}</span>
-                            <a href="{{ post.url | relative_url }}" class="pub-card__link">ler mais <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-                        </div>
-                    </article>
+                    {% include pub-card.html post=post heading="h2" %}
                     {% endfor %}
                 </div>
 

@@ -1,0 +1,17 @@
+{%- comment -%}
+Card de publicação, usado no grid da home (index.html) e em /blog. Recebe:
+  post    (obrigatório) — um item de site.posts
+  heading (obrigatório) — "h2" ou "h3", conforme a hierarquia de headings da página que inclui o partial
+{%- endcomment -%}
+<article class="pub-card" data-categories="{{ include.post.categories | join: ' ' }}">
+    <div class="pub-tag {{ include.post.tag_class }}">
+        {% include icon.html name=include.post.tag_icon size="14" %}
+        {{ include.post.tag_label }}
+    </div>
+    <{{ include.heading }} class="pub-card__title">{{ include.post.title }}</{{ include.heading }}>
+    <p class="pub-card__desc">{{ include.post.card_description }}</p>
+    <div class="pub-card__foot">
+        <span class="pub-card__meta-tag">{{ include.post.date_display }}</span>
+        <a href="{{ include.post.url | relative_url }}" class="pub-card__link">ler mais {% include icon.html name="arrow-up-right" size="14" %}</a>
+    </div>
+</article>

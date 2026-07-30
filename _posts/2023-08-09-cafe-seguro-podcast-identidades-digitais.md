@@ -5,6 +5,7 @@ description: "Episódio do Café Seguro Podcast sobre identidades digitais basea
 excerpt_text: "Episódio do Café Seguro Podcast sobre o uso de blockchain para identidades digitais soberanas e suas aplicações práticas."
 tag_label: "Podcast"
 tag_class: "pub-tag--podcast"
+tag_icon: "headphones"
 categories: [podcast, blockchain]
 card_description: "Episódio do Café Seguro Podcast sobre o uso de blockchain para identidades digitais soberanas e suas aplicações práticas."
 schema_type: BlogPosting

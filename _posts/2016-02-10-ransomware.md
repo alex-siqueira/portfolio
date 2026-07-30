@@ -5,6 +5,7 @@ description: "O que é ransomware, como funciona e como se proteger de um dos at
 excerpt_text: "A pergunta é: O quão disposto você estaria a pagar o resgate?"
 tag_label: "Blog"
 tag_class: "pub-tag--blog"
+tag_icon: "rss"
 categories: [seguranca]
 card_description: "A pergunta é: O quão disposto você estaria a pagar o resgate?"
 schema_type: BlogPosting
