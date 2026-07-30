@@ -716,7 +716,6 @@ main { flex: 1; position: relative; z-index: 1; }
 }
 .contato__social-link:hover { background: var(--surface-2); border-color: var(--accent); color: var(--accent); }
 .contato__social-link svg { width: 18px; height: 18px; stroke-width: 1.75; }
-.contato__social-link .bx { font-size: 20px; line-height: 1; }
 
 .contato__groups { display: flex; flex-direction: column; gap: var(--s-6); }
 .contato__group-title {

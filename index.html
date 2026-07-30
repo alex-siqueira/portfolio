@@ -64,37 +64,35 @@ schema_type: Person
                         <h3 class="info-card__title">Em resumo</h3>
                         <ul class="info-list">
                             <li class="info-list__item">
-                                <i data-lucide="building-2"></i>
+                                {% include icon.html name="building-2" size="16" %}
                                 <div>
                                     <span class="info-list__label">Empresa</span>
                                     <span class="info-list__value">Mercado Livre</span>
                                 </div>
                             </li>
                             <li class="info-list__item">
-                                <i data-lucide="shield-check"></i>
+                                {% include icon.html name="shield-check" size="16" %}
                                 <div>
                                     <span class="info-list__label">Especialidade</span>
                                     <span class="info-list__value">Segurança e arquitetura de software</span>
                                 </div>
                             </li>
                             <li class="info-list__item">
-                                <i data-lucide="graduation-cap"></i>
+                                {% include icon.html name="graduation-cap" size="16" %}
                                 <div>
                                     <span class="info-list__label">Formação</span>
                                     <span class="info-list__value">Mestre em inovação tecnológica &mdash; UNIFESP</span>
                                 </div>
                             </li>
                             <li class="info-list__item">
-                                <i data-lucide="map-pin"></i>
+                                {% include icon.html name="map-pin" size="16" %}
                                 <div>
                                     <span class="info-list__label">Localização</span>
                                     <span class="info-list__value">São Paulo, Brasil</span>
                                 </div>
                             </li>
                             <li class="info-list__item">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/>
-                                </svg>
+                                {% include icon.html name="youtube" size="16" %}
                                 <div>
                                     <span class="info-list__label">Conteúdo</span>
                                     <span class="info-list__value">TechStudio &mdash; Podcast e YouTube</span>
@@ -145,7 +143,7 @@ schema_type: Person
                         </div>
                         <div class="timeline__card">
                             <p class="timeline__company">
-                                <i data-lucide="building-2"></i>
+                                {% include icon.html name="building-2" size="14" %}
                                 Mercado Livre
                             </p>
                             <h3 class="timeline__role">Cybersecurity Tech Leader</h3>
@@ -161,7 +159,7 @@ schema_type: Person
                         </div>
                         <div class="timeline__card">
                             <p class="timeline__company">
-                                <i data-lucide="graduation-cap"></i>
+                                {% include icon.html name="graduation-cap" size="14" %}
                                 MBA em Arquitetura de Soluções Digitais
                             </p>
                             <h3 class="timeline__role">Professor Freelancer</h3>
@@ -177,7 +175,7 @@ schema_type: Person
                         </div>
                         <div class="timeline__card">
                             <p class="timeline__company">
-                                <i data-lucide="building-2"></i>
+                                {% include icon.html name="building-2" size="14" %}
                                 CA Technologies / HCL Technologies
                             </p>
                             <h3 class="timeline__role">Security Architect</h3>
@@ -193,7 +191,7 @@ schema_type: Person
                         </div>
                         <div class="timeline__card">
                             <p class="timeline__company">
-                                <i data-lucide="building-2"></i>
+                                {% include icon.html name="building-2" size="14" %}
                                 HSBC
                             </p>
                             <h3 class="timeline__role">Architecture Specialist</h3>
@@ -209,7 +207,7 @@ schema_type: Person
                         </div>
                         <div class="timeline__card">
                             <p class="timeline__company">
-                                <i data-lucide="code-2"></i>
+                                {% include icon.html name="code-2" size="14" %}
                                 Empresas de Telecom e Mercado Financeiro
                             </p>
                             <h3 class="timeline__role">Desenvolvedor de Software</h3>
@@ -229,7 +227,7 @@ schema_type: Person
                         </div>
                         <div class="timeline__card">
                             <p class="timeline__company">
-                                <i data-lucide="flask-conical"></i>
+                                {% include icon.html name="flask-conical" size="14" %}
                                 Universidade Federal de São Paulo &mdash; UNIFESP
                             </p>
                             <h3 class="timeline__role">Mestrado em Inovação Tecnológica</h3>
@@ -245,7 +243,7 @@ schema_type: Person
                         </div>
                         <div class="timeline__card">
                             <p class="timeline__company">
-                                <i data-lucide="graduation-cap"></i>
+                                {% include icon.html name="graduation-cap" size="14" %}
                                 Universidade Metodista de São Paulo
                             </p>
                             <h3 class="timeline__role">Bacharelado em Ciências da Computação</h3>
@@ -401,13 +399,13 @@ schema_type: Person
                     <p class="contato__body">Se algo na minha trajetória ou produção acadêmica fez você querer continuar a conversa — seja uma parceria, uma oportunidade profissional ou simplesmente deixar um olá — fique à vontade para entrar em contato: ficarei feliz em responder.</p>
                     <div class="contato__social">
                         <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" class="contato__social-link" aria-label="LinkedIn">
-                            <i class="bx bxl-linkedin" aria-hidden="true"></i>
+                            {% include icon.html name="linkedin" size="18" %}
                         </a>
                         <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" class="contato__social-link" aria-label="GitHub">
-                            <i class="bx bxl-github" aria-hidden="true"></i>
+                            {% include icon.html name="github" size="18" %}
                         </a>
                         <a href="https://www.youtube.com/TechstudioPod" target="_blank" rel="noopener" class="contato__social-link" aria-label="YouTube TechStudio">
-                            <i class="bx bxl-youtube" aria-hidden="true"></i>
+                            {% include icon.html name="youtube" size="18" %}
                         </a>
                     </div>
                 </div>
@@ -418,14 +416,14 @@ schema_type: Person
                         <h3 class="contato__group-title">Pessoal</h3>
                         <div class="contato__items">
                             <a href="https://t.me/alexsiqueira_eth" target="_blank" rel="noopener" class="contato__item">
-                                <i data-lucide="send"></i>
+                                {% include icon.html name="send" size="18" %}
                                 <div class="contato__item-text">
                                     <span class="contato__item-label">Telegram</span>
                                     <span class="contato__item-value">@alexsiqueira_eth</span>
                                 </div>
                             </a>
                             <a href="https://app.ens.domains/alexsiqueira.eth" target="_blank" rel="noopener" class="contato__item">
-                                <i data-lucide="hexagon"></i>
+                                {% include icon.html name="hexagon" size="18" %}
                                 <div class="contato__item-text">
                                     <span class="contato__item-label">ENS</span>
                                     <span class="contato__item-value">alexsiqueira.eth</span>
@@ -438,14 +436,14 @@ schema_type: Person
                         <h3 class="contato__group-title">Acadêmico</h3>
                         <div class="contato__items">
                             <a href="mailto:alexandre.siqueira&#64;unifesp&#46;br" class="contato__item">
-                                <i data-lucide="mail"></i>
+                                {% include icon.html name="mail" size="18" %}
                                 <div class="contato__item-text">
                                     <span class="contato__item-label">E-mail</span>
                                     <span class="contato__item-value">alexandre.siqueira&#64;unifesp&#46;br</span>
                                 </div>
                             </a>
                             <a href="https://lattes.cnpq.br/5550434548511523" target="_blank" rel="noopener" class="contato__item">
-                                <i data-lucide="file-text"></i>
+                                {% include icon.html name="file-text" size="18" %}
                                 <div class="contato__item-text">
                                     <span class="contato__item-label">Currículo Lattes</span>
                                     <span class="contato__item-value">lattes.cnpq.br</span>
@@ -458,7 +456,7 @@ schema_type: Person
                         <h3 class="contato__group-title">Profissional</h3>
                         <div class="contato__items">
                             <a href="mailto:alexandre.siqueira&#64;mercadolivre&#46;com" class="contato__item">
-                                <i data-lucide="mail"></i>
+                                {% include icon.html name="mail" size="18" %}
                                 <div class="contato__item-text">
                                     <span class="contato__item-label">E-mail</span>
                                     <span class="contato__item-value">alexandre.siqueira&#64;mercadolivre&#46;com</span>

@@ -42,12 +42,18 @@ Plain script, no build step, loaded on every page via `_layouts/default.html`. F
 The script assumes `#header`, `#menu-toggle` and `#nav` exist — they come from the shared layout, so every page has them.
 
 ### Icons
-Three sources, deliberately:
-- **Lucide** (`<i data-lucide="name">`, converted to `<svg>` at runtime) for UI icons. Pinned to a version with SRI in `_layouts/default.html` — never use `@latest`, and update the `integrity` hash whenever the version changes.
-- **Inline SVG** for the GitHub / LinkedIn / YouTube brand marks. Lucide dropped brand icons in its 1.x line, so `data-lucide="github"` and friends silently render nothing. Do not reintroduce them.
-- **Boxicons** (`<i class="bx bxl-*">`) for the three social icons in the contato section only.
+All icons come from `_includes/icon.html`. There is no icon library and no icon CDN.
 
-Lucide loads *after* `script.js`, so `window.lucide` is undefined while `script.js` runs — don't call `createIcons()` from there.
+```liquid
+{% include icon.html name="github" size="18" %}
+{% include icon.html name="menu" size="22" class="menu-toggle__open" %}
+```
+
+To add an icon, add a `{%- when 'name' -%}` branch to `_includes/icon.html` with the raw `<path>`/`<circle>`/`<rect>` elements — the file supplies the surrounding `<svg>` wrapper, so branches hold shapes only. Keep the 24×24 viewBox and the stroke style; icons are drawn with `currentColor`, so they inherit color and hover states from their container.
+
+The `size` argument is only the pre-CSS starting value. Actual sizes come from the stylesheet (`.nav-icon svg`, `.info-list__item svg`, `.timeline__company svg`, and so on), which sets width/height at every call site.
+
+This replaced Lucide and Boxicons, which together cost ~218KB over the wire to draw 16 icons. It also closes the failure mode that motivated the change: Lucide removed all brand icons in its 1.x line, so `github`, `linkedin` and `youtube` silently rendered nothing. Don't reach for an icon library for brand marks — Simple Icons ships a 1MB font, Boxicons has had no release since 2022.
 
 ### Blog (Jekyll)
 - **Posts**: `_posts/YYYY-MM-DD-slug.md` — Jekyll convention, rendered via `_layouts/post.html`
