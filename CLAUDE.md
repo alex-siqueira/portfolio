@@ -86,3 +86,8 @@ Breakpoints, all `max-width`: 1024px, 900px (mobile nav takes over here), 768px,
 
 ### Deployment
 GitHub Pages, built by `.github/workflows/jekyll.yml` on push to `main` — not by the Pages default Jekyll build. The workflow runs `bundle exec jekyll build` with `JEKYLL_ENV=production` and publishes `_site/`. The custom domain comes from `CNAME`.
+
+The zone sits behind Cloudflare (proxy/DNS). `cloudflare-worker/markdown-negotiation.js` is deployed there directly — it is not part of the Jekyll build or the GitHub Actions workflow, and nothing in this repo deploys it automatically. It watches for `Accept: text/markdown` and converts the origin's rendered `<main>` HTML into Markdown at the edge, so agents can request a clean Markdown version of any page without a second, hand-maintained copy of the content. See the file's header comment for deploy/test steps.
+
+### Agent readiness
+`robots.txt` declares `Content-Signal: ai-train=no, search=yes, ai-input=yes`. `llms.txt` and `profile.md` (built from `profile.txt`, which uses a non-Markdown source extension so Jekyll's kramdown converter doesn't touch it — front matter `permalink: /profile.md` controls the output path) both pull their publication lists from `site.posts`, the same source `_includes/pub-card.html` uses, so they can't drift from the blog independently.
