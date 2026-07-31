@@ -49,16 +49,19 @@ export default {
 // it does not decode entities like the browser does, so `&mdash;` (already
 // literal in the rendered HTML, e.g. post titles) would otherwise leak into
 // the Markdown output unchanged instead of becoming "—".
+//
+// Deliberately NOT decoding numeric entities (&#64; &#46; ...): index.html
+// spells out the contact emails with numeric character references
+// specifically to deter scraping (see contato__item-value). Decoding those
+// here would silently strip that protection for exactly the audience —
+// automated agents — this file exists to serve.
 const NAMED_ENTITIES = {
   amp: '&', lt: '<', gt: '>', quot: '"', apos: "'",
   mdash: '—', ndash: '–', hellip: '…', nbsp: ' ',
 };
 
 function decodeEntities(text) {
-  return text
-    .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)))
-    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
-    .replace(/&([a-zA-Z]+);/g, (m, name) => NAMED_ENTITIES[name] ?? m);
+  return text.replace(/&([a-zA-Z]+);/g, (m, name) => NAMED_ENTITIES[name] ?? m);
 }
 
 async function htmlToMarkdown(response) {
@@ -105,6 +108,9 @@ async function htmlToMarkdown(response) {
     // it back so text doesn't run together, e.g. "4artigos".
     .on('main span', {
       element(el) { el.onEndTag(() => write(' ')); },
+    })
+    .on('main br', {
+      element(el) { write(' '); },
     })
     .on('main h1', heading(1))
     .on('main h2', heading(2))
