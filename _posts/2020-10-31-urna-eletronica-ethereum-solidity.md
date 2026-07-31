@@ -17,7 +17,6 @@ date_display: "31 de outubro de 2020"
 <iframe width="560" height="315" src="https://www.youtube.com/embed/V6zTSr3hB3U?si=PHGFy1M6HWY-ryxP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <h2>Código em Solidity</h2>
-<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 
 <pre>
 <code>// SPDX-License-Identifier: GPL-2.0-or-later
