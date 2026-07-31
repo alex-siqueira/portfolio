@@ -892,7 +892,7 @@ main { flex: 1; position: relative; z-index: 1; }
 .post-content pre code { background: none; padding: 0; font-size: 13px; line-height: 1.7; }
 .post-content blockquote { border-left: 2px solid var(--accent); padding: var(--s-3) var(--s-5); margin: var(--s-5) 0; background: var(--surface); border-radius: 0 var(--r-2) var(--r-2) 0; }
 .post-content blockquote p { color: var(--fg-secondary); font-style: italic; margin: 0; }
-.post-content img { border-radius: var(--r-2); margin: var(--s-6) 0; width: 100%; }
+.post-content img { border-radius: var(--r-2); margin: var(--s-6) 0; width: 100%; height: auto; }
 .post-content iframe { width: 100%; border-radius: var(--r-2); margin: var(--s-6) 0; border: none; }
 
 .post-footer {
