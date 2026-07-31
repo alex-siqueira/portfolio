@@ -8,6 +8,7 @@
     <meta name="author" content="Alexandre Siqueira">
     <link rel="canonical" href="{{ page.url | prepend: site.url }}">
     <link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
+    {% feed_meta %}
 
     {% if page.url == "/" %}
       {% assign page_title = page.title %}
@@ -19,13 +20,17 @@
     <meta property="og:site_name" content="Alexandre Siqueira">
     <meta property="og:title" content="{{ page_title }}">
     <meta property="og:description" content="{{ page.description }}">
-    <meta property="og:image" content="{{ site.url }}/images/eu.jpg">
+    <meta property="og:image" content="{{ site.url }}/images/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Alexandre Siqueira — Um olhar curioso sobre a tecnologia">
     <meta property="og:url" content="{{ page.url | prepend: site.url }}">
     <meta property="og:locale" content="pt_BR">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ page_title }}">
     <meta name="twitter:description" content="{{ page.description }}">
-    <meta name="twitter:image" content="{{ site.url }}/images/eu.jpg">
+    <meta name="twitter:image" content="{{ site.url }}/images/og-cover.jpg">
+    <meta name="twitter:image:alt" content="Alexandre Siqueira — Um olhar curioso sobre a tecnologia">
 
     {% if page.schema_type == 'Person' %}
     <script type="application/ld+json">
@@ -67,7 +72,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
 </head>
 
@@ -82,21 +86,16 @@
     <header id="header"{% unless page.url == "/" %} class="scrolled"{% endunless %}>
         <div class="header-inner">
             <a href="{{ '/' | relative_url }}" class="logo">
-                <span class="logo-mark">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
-                    </svg>
-                </span>
+                <span class="logo-mark">{% include icon.html name="logo" size="20" %}</span>
                 <span class="logo-name">alexandre siqueira</span>
             </a>
             <div class="nav-actions">
-                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" class="nav-icon" aria-label="GitHub">
-                    <i data-lucide="github"></i>
-                </a>
+                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" class="nav-icon" aria-label="GitHub">{% include icon.html name="github" size="18" %}</a>
                 <a href="{{ nav_prefix }}#contato" class="btn btn--primary btn--sm">conversar →</a>
             </div>
             <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
-                <i data-lucide="menu"></i>
+                {% include icon.html name="menu" size="22" class="menu-toggle__open" %}
+                {% include icon.html name="close" size="22" class="menu-toggle__close" %}
             </button>
         </div>
     </header>
@@ -105,7 +104,7 @@
         <a href="{{ nav_prefix }}#home" class="nav-link">home</a>
         <a href="{{ nav_prefix }}#sobre" class="nav-link">sobre</a>
         <a href="{{ nav_prefix }}#experiencia" class="nav-link">experiência</a>
-        <a href="{{ nav_prefix }}#publicacoes" class="nav-link{% if page.nav_active == 'publicacoes' %} active{% endif %}">publicações</a>
+        <a href="{{ nav_prefix }}#publicacoes" class="nav-link{% if page.nav_active == 'publicacoes' %} active{% endif %}"{% if page.nav_active == 'publicacoes' %} aria-current="page"{% endif %}>publicações</a>
         <a href="{{ nav_prefix }}#contato" class="nav-link">contato</a>
     </nav>
 
@@ -116,25 +115,19 @@
     <footer class="footer">
         <div class="footer__inner">
             <div class="footer__brand">
-                <span class="logo-mark">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
-                    </svg>
-                </span>
+                <span class="logo-mark">{% include icon.html name="logo" size="20" %}</span>
                 <span>alexandre siqueira</span>
             </div>
             <p class="footer__copy">&copy; 2026 Alexandre Siqueira. Feito com curiosidade.</p>
             <div class="footer__social">
-                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" aria-label="GitHub"><i data-lucide="github"></i></a>
-                <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
-                <a href="https://www.youtube.com/TechstudioPod" target="_blank" rel="noopener" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+                <a href="https://github.com/alex-siqueira" target="_blank" rel="noopener" aria-label="GitHub">{% include icon.html name="github" size="18" %}</a>
+                <a href="https://www.linkedin.com/in/siqueiraalexandre" target="_blank" rel="noopener" aria-label="LinkedIn">{% include icon.html name="linkedin" size="18" %}</a>
+                <a href="https://www.youtube.com/TechstudioPod" target="_blank" rel="noopener" aria-label="YouTube">{% include icon.html name="youtube" size="18" %}</a>
             </div>
         </div>
     </footer>
 
     <script src="{{ '/js/script.js' | relative_url }}"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-    <script>if (window.lucide) lucide.createIcons();</script>
 
 </body>
 </html>

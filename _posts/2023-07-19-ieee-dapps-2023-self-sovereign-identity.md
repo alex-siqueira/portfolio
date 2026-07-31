@@ -5,6 +5,7 @@ description: "Artigo apresentado na IEEE DApps 2023 — avaliação de desempenh
 excerpt_text: "Para quem tiver interesse em saber os resultados e as conclusões que chegamos (SPOILER: os números são promissores), deixo uma cópia do artigo original para leitura."
 tag_label: "Conferência"
 tag_class: "pub-tag--academico"
+tag_icon: "presentation"
 categories: [academico, blockchain]
 card_description: "Artigo apresentado na IEEE DApps 2023. Avaliação de desempenho de casos de uso de identidade auto-soberana em cenários reais."
 schema_type: ScholarlyArticle

@@ -5,13 +5,14 @@ description: "Uma reflexão sobre privacidade na era das redes sociais e os meca
 excerpt_text: "Não é só porque um recado no quadro de avisos do condomínio foi escrito para os moradores, que só os moradores vão ler."
 tag_label: "Blog"
 tag_class: "pub-tag--blog"
+tag_icon: "rss"
 categories: [seguranca]
 card_description: "Não é só porque um recado no quadro de avisos do condomínio foi escrito para os moradores, que só os moradores vão ler."
 schema_type: BlogPosting
 date_display: "15 de janeiro de 2016"
 ---
 
-<img src="{{ '/images/person-woman-apple-hotel.jpg' | relative_url }}" alt="Pessoa usando computador em ambiente público"/>
+<img src="{{ '/images/person-woman-apple-hotel.jpg' | relative_url }}" alt="Pessoa usando computador em ambiente público" loading="lazy"/>
 
 <p>Um amigo disse a frase acima, certa vez, enquanto discutíamos sobre privacidade na internet. A analogia ilustra a ingenuidade de muitos de nós ao postar fotos, comentários, opiniões ou mesmo "curtidas" nas redes sociais.</p>
 

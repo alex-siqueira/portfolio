@@ -21,23 +21,20 @@ window.addEventListener('scroll', () => {
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.getElementById('nav');
 
-menuToggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('active');
+// aria-expanded is the single source of truth — the CSS swaps the icon from it
+function setMenu(isOpen) {
+    nav.classList.toggle('active', isOpen);
     menuToggle.setAttribute('aria-expanded', String(isOpen));
-    const menuIcon = menuToggle.querySelector('i[data-lucide]');
-    menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
-    if (window.lucide) window.lucide.createIcons({ nodes: [menuIcon] });
+    menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+}
+
+menuToggle.addEventListener('click', () => {
+    setMenu(!nav.classList.contains('active'));
 });
 
 // Close mobile menu when a nav link is clicked
 nav.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        const menuIcon = menuToggle.querySelector('i[data-lucide]');
-        menuIcon.setAttribute('data-lucide', 'menu');
-        if (window.lucide) window.lucide.createIcons({ nodes: [menuIcon] });
-    });
+    link.addEventListener('click', () => setMenu(false));
 });
 
 
@@ -52,7 +49,10 @@ const spyObserver = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
             navLinks.forEach(link => {
-                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                const isCurrent = link.getAttribute('href') === `#${id}`;
+                link.classList.toggle('active', isCurrent);
+                if (isCurrent) link.setAttribute('aria-current', 'true');
+                else link.removeAttribute('aria-current');
             });
         }
     });
@@ -67,17 +67,37 @@ sections.forEach(section => spyObserver.observe(section));
 /* =========================================
    TIMELINE TABS
    ========================================= */
-const timelineTabs = document.querySelectorAll('.timeline-tab');
+const timelineTabs = [...document.querySelectorAll('.timeline-tab')];
+
+function selectTab(tab, moveFocus) {
+    timelineTabs.forEach(t => {
+        const isCurrent = t === tab;
+        t.classList.toggle('active', isCurrent);
+        t.setAttribute('aria-selected', String(isCurrent));
+        // roving tabindex: only the selected tab is in the tab order
+        t.tabIndex = isCurrent ? 0 : -1;
+        document.getElementById(`timeline-${t.dataset.tab}`).classList.toggle('hidden', !isCurrent);
+    });
+    if (moveFocus) tab.focus();
+}
 
 timelineTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = tab.dataset.tab;
+    tab.addEventListener('click', () => selectTab(tab));
 
-        timelineTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+    // arrow keys move between tabs, as expected of a tablist
+    tab.addEventListener('keydown', event => {
+        const last = timelineTabs.length - 1;
+        const i = timelineTabs.indexOf(tab);
+        let next;
 
-        document.querySelectorAll('.timeline').forEach(tl => tl.classList.add('hidden'));
-        document.getElementById(`timeline-${target}`).classList.remove('hidden');
+        if (event.key === 'ArrowRight') next = timelineTabs[i === last ? 0 : i + 1];
+        else if (event.key === 'ArrowLeft') next = timelineTabs[i === 0 ? last : i - 1];
+        else if (event.key === 'Home') next = timelineTabs[0];
+        else if (event.key === 'End') next = timelineTabs[last];
+        else return;
+
+        event.preventDefault();
+        selectTab(next, true);
     });
 });
 
@@ -87,25 +107,35 @@ timelineTabs.forEach(tab => {
    ========================================= */
 const filterBtns = document.querySelectorAll('.filter-btn');
 const pubCards = document.querySelectorAll('.pub-card');
+const pubFilterStatus = document.getElementById('pub-filter-status');
 
 filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         const filter = btn.dataset.filter;
 
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+        filterBtns.forEach(b => {
+            const isCurrent = b === btn;
+            b.classList.toggle('active', isCurrent);
+            b.setAttribute('aria-pressed', String(isCurrent));
+        });
 
+        let visibleCount = 0;
         pubCards.forEach(card => {
+            let isVisible;
             if (filter === 'all') {
-                card.classList.remove('hidden');
+                isVisible = true;
             } else {
                 const categories = card.dataset.categories || '';
-                card.classList.toggle('hidden', !categories.includes(filter));
+                isVisible = categories.includes(filter);
             }
+            card.classList.toggle('hidden', !isVisible);
+            if (isVisible) visibleCount++;
         });
+
+        if (pubFilterStatus) {
+            const noun = visibleCount === 1 ? 'publicação encontrada' : 'publicações encontradas';
+            pubFilterStatus.textContent = `${visibleCount} ${noun}`;
+        }
     });
 });
 
-
-/* Init Lucide icons */
-if (window.lucide) window.lucide.createIcons();

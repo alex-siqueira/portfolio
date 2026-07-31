@@ -5,6 +5,7 @@ description: "Entrevista concedida ao InfoMoney sobre segurança no ecossistema 
 excerpt_text: "Entrevista concedida ao InfoMoney sobre segurança no ecossistema do Pix integrado ao Open Banking."
 tag_label: "Mídia"
 tag_class: "pub-tag--midia"
+tag_icon: "mic"
 categories: [podcast]
 card_description: "Entrevista concedida ao InfoMoney sobre segurança no ecossistema do Pix integrado ao Open Banking."
 schema_type: BlogPosting

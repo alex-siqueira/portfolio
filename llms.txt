@@ -1,0 +1,25 @@
+---
+---
+# Alexandre Siqueira
+
+> Especialista em cibersegurança, arquiteto de software, pesquisador e criador de conteúdo. Lidera a cibersegurança de produtos fintech no Mercado Livre e foi co-autor do Security Profile do Open Finance Brasil.
+
+Site pessoal em português (pt-BR) sobre cibersegurança, blockchain, identidade digital e arquitetura de software.
+
+## Perfil
+
+- [Currículo em Markdown]({{ site.url }}/profile.md): trajetória profissional, formação e publicações em formato estruturado.
+- [Sobre]({{ site.url }}/#sobre): resumo da carreira e atuação atual.
+- [Experiência]({{ site.url }}/#experiencia): trajetória profissional detalhada.
+- [Contato]({{ site.url }}/#contato): como entrar em contato.
+
+## Publicações
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url | prepend: site.url }}): {{ post.card_description }}
+{%- endfor %}
+
+## Outros links
+
+- [GitHub](https://github.com/alex-siqueira)
+- [LinkedIn](https://linkedin.com/in/siqueiraalexandre)
+- [YouTube — TechStudio](https://www.youtube.com/TechstudioPod)

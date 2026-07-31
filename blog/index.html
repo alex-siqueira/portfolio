@@ -20,24 +20,17 @@ og_type: website
             <div class="blog-listing__inner">
 
                 <div class="filter-bar" role="group" aria-label="Filtrar por categoria">
-                    <button class="filter-btn active" data-filter="all">Tudo</button>
-                    <button class="filter-btn" data-filter="podcast">Podcast &amp; Mídia</button>
-                    <button class="filter-btn" data-filter="blockchain">Blockchain &amp; SSI</button>
-                    <button class="filter-btn" data-filter="seguranca">Segurança &amp; Privacidade</button>
-                    <button class="filter-btn" data-filter="academico">Publicações Acadêmicas</button>
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true">Tudo</button>
+                    <button class="filter-btn" data-filter="podcast" aria-pressed="false">Podcast &amp; Mídia</button>
+                    <button class="filter-btn" data-filter="blockchain" aria-pressed="false">Blockchain &amp; SSI</button>
+                    <button class="filter-btn" data-filter="seguranca" aria-pressed="false">Segurança &amp; Privacidade</button>
+                    <button class="filter-btn" data-filter="academico" aria-pressed="false">Publicações Acadêmicas</button>
                 </div>
+                <p id="pub-filter-status" class="sr-only" role="status" aria-live="polite"></p>
 
                 <div class="pub-grid" id="pub-grid">
                     {% for post in site.posts %}
-                    <article class="pub-card" data-categories="{{ post.categories | join: ' ' }}">
-                        <div class="pub-tag {{ post.tag_class }}">{{ post.tag_label }}</div>
-                        <h2 class="pub-card__title">{{ post.title }}</h2>
-                        <p class="pub-card__desc">{{ post.card_description }}</p>
-                        <div class="pub-card__foot">
-                            <span class="pub-card__meta-tag">{{ post.date_display }}</span>
-                            <a href="{{ post.url | relative_url }}" class="pub-card__link">ler mais <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
-                        </div>
-                    </article>
+                    {% include pub-card.html post=post heading="h2" %}
                     {% endfor %}
                 </div>
 

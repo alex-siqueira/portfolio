@@ -5,6 +5,7 @@ description: "Capítulo publicado no Volume 2 da série sobre Fundamentos e Tend
 excerpt_text: "Capítulo publicado no Volume 2 da série sobre Fundamentos e Tendências em Inovação Tecnológica."
 tag_label: "Capítulo de livro"
 tag_class: "pub-tag--academico"
+tag_icon: "book-open"
 categories: [academico]
 card_description: "Capítulo publicado no Volume 2 da série sobre Fundamentos e Tendências em Inovação Tecnológica."
 schema_type: BlogPosting

@@ -5,6 +5,7 @@ description: "Implementação de um sistema de votação eletrônica usando cont
 excerpt_text: "Implementação de um sistema de votação eletrônica usando contratos inteligentes na blockchain Ethereum com Solidity."
 tag_label: "Blog"
 tag_class: "pub-tag--blog"
+tag_icon: "rss"
 categories: [blockchain]
 card_description: "Implementação de um sistema de votação eletrônica usando contratos inteligentes na blockchain Ethereum com Solidity."
 schema_type: BlogPosting

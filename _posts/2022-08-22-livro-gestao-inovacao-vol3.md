@@ -5,6 +5,7 @@ description: "Capítulo de livro publicado no Volume 3 da série sobre Práticas
 excerpt_text: "Capítulo publicado no Volume 3 da série sobre Práticas de Gestão da Inovação."
 tag_label: "Capítulo de livro"
 tag_class: "pub-tag--academico"
+tag_icon: "book-open"
 categories: [academico]
 card_description: "Capítulo publicado no Volume 3 da série sobre Práticas de Gestão da Inovação."
 schema_type: BlogPosting

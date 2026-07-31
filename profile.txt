@@ -1,0 +1,77 @@
+---
+permalink: /profile.md
+---
+# Alexandre Siqueira
+
+Cybersecurity Tech Leader · Arquiteto de Software · Pesquisador em Identidades Digitais
+
+São Paulo, Brasil · [{{ site.url }}]({{ site.url }})
+
+## Resumo
+
+Mais de 20 anos em tecnologia — de desenvolvedor a arquiteto de software, hoje
+especialista em cibersegurança no Mercado Livre e pesquisador em identidades
+digitais. Começou escrevendo código para telecom e mercado financeiro, migrou
+para arquitetura de software e, a partir da experiência com prevenção a
+fraudes, migrou para segurança da informação. Foi co-autor do Security
+Profile do Open Finance Brasil, o padrão de cibersegurança adotado em todo o
+ecossistema de open banking do país.
+
+## Experiência Profissional
+
+### Cybersecurity Tech Leader — Mercado Livre
+2020 – atual
+
+Liderança dos esforços de segurança da informação com enfoque na proteção de
+produtos de fintech.
+
+### Professor Freelancer — MBA em Arquitetura de Soluções Digitais
+2022 – 2025
+
+Disciplinas de Cybersecurity & Cyberlaw para estudantes de pós-graduação em
+arquitetura de soluções digitais.
+
+### Security Architect — CA Technologies / HCL Technologies
+2016 – 2020
+
+Arquiteto de Professional Services para soluções de Segurança da Informação —
+especialista na América Latina sobre API Management.
+
+### Architecture Specialist — HSBC
+2014 – 2016
+
+Líder do time local de desenvolvimento do projeto "Brazil Post Trade &
+Integration", plataforma de BackOffice de tesouraria para derivativos de
+balcão.
+
+### Desenvolvedor de Software — empresas de Telecom e Mercado Financeiro
+Início de carreira
+
+Desenvolvimento de sistemas para os setores de telecomunicações e mercado
+financeiro. Base para mais de duas décadas de atuação em tecnologia.
+
+## Formação Acadêmica
+
+### Mestrado em Inovação Tecnológica — Universidade Federal de São Paulo (UNIFESP)
+
+Pesquisa sobre identidades digitais baseadas em blockchain para prontuários
+médicos descentralizados. Resultou em publicação apresentada na IEEE DApps
+2023.
+
+### Bacharelado em Ciências da Computação — Universidade Metodista de São Paulo
+
+Formação em fundamentos de ciência da computação. Orador da turma de 2003.
+
+## Publicações & Mídia
+{% for post in site.posts %}
+- **{{ post.title }}** ({{ post.date | date: "%Y" }}, {{ post.tag_label }}) — {{ post.card_description }}
+  {{ post.url | prepend: site.url }}
+{%- endfor %}
+
+## Contato
+
+- LinkedIn: [linkedin.com/in/siqueiraalexandre](https://www.linkedin.com/in/siqueiraalexandre)
+- GitHub: [github.com/alex-siqueira](https://github.com/alex-siqueira)
+- YouTube — TechStudio: [youtube.com/TechstudioPod](https://www.youtube.com/TechstudioPod)
+- Telegram: [@alexsiqueira_eth](https://t.me/alexsiqueira_eth)
+- ENS: [alexsiqueira.eth](https://app.ens.domains/alexsiqueira.eth)

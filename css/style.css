@@ -50,6 +50,12 @@ a { color: inherit; text-decoration: none; }
 button { font-family: inherit; cursor: pointer; border: none; background: none; }
 img { display: block; max-width: 100%; }
 
+/* Every control here is custom-styled, so the focus ring has to be explicit */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
 /* 3. BASE */
 body {
   background: var(--bg);
@@ -241,6 +247,10 @@ main { flex: 1; position: relative; z-index: 1; }
 
 .menu-toggle { display: none; color: var(--fg); padding: 6px; }
 .menu-toggle svg { width: 22px; height: 22px; stroke-width: 1.75; }
+/* Icon follows aria-expanded — no JS icon swapping */
+.menu-toggle__close { display: none; }
+.menu-toggle[aria-expanded="true"] .menu-toggle__open { display: none; }
+.menu-toggle[aria-expanded="true"] .menu-toggle__close { display: block; }
 
 /* 8. HERO */
 #home {
@@ -566,7 +576,7 @@ main { flex: 1; position: relative; z-index: 1; }
   letter-spacing: 0.08em;
   margin-bottom: 8px;
 }
-.timeline__company svg { width: 14px; height: 14px; color: var(--accent); stroke-width: 1.75; }
+.timeline__company svg { width: 14px; height: 14px; color: var(--accent); stroke-width: 1.75; flex-shrink: 0; }
 
 .timeline__role {
   font-family: var(--ff-display);
@@ -601,6 +611,19 @@ main { flex: 1; position: relative; z-index: 1; }
 }
 .filter-btn:hover { border-color: var(--border-strong); color: var(--fg); }
 .filter-btn.active { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); font-weight: 500; }
+
+/* Visually hidden but announced by screen readers, e.g. the publications filter's live count. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 .pub-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 
@@ -706,7 +729,6 @@ main { flex: 1; position: relative; z-index: 1; }
 }
 .contato__social-link:hover { background: var(--surface-2); border-color: var(--accent); color: var(--accent); }
 .contato__social-link svg { width: 18px; height: 18px; stroke-width: 1.75; }
-.contato__social-link .bx { font-size: 20px; line-height: 1; }
 
 .contato__groups { display: flex; flex-direction: column; gap: var(--s-6); }
 .contato__group-title {
@@ -938,4 +960,15 @@ main { flex: 1; position: relative; z-index: 1; }
   .timeline__axis { display: none; }
   .timeline__card { padding-bottom: var(--s-6); border-left: 2px solid var(--border); padding-left: var(--s-4); margin-left: 4px; }
   .timeline__period { margin-bottom: var(--s-2); }
+}
+
+/* 17. REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
