@@ -12,7 +12,7 @@ schema_type: BlogPosting
 date_display: "15 de janeiro de 2016"
 ---
 
-<img src="{{ '/images/person-woman-apple-hotel.jpg' | relative_url }}" alt="Pessoa usando computador em ambiente público" loading="lazy"/>
+<img src="{{ '/images/person-woman-apple-hotel.jpg' | relative_url }}" alt="Pessoa usando computador em ambiente público" width="1920" height="1281" loading="lazy"/>
 
 <p>Um amigo disse a frase acima, certa vez, enquanto discutíamos sobre privacidade na internet. A analogia ilustra a ingenuidade de muitos de nós ao postar fotos, comentários, opiniões ou mesmo "curtidas" nas redes sociais.</p>
 
