@@ -126,7 +126,7 @@ filterBtns.forEach(btn => {
                 isVisible = true;
             } else {
                 const categories = card.dataset.categories || '';
-                isVisible = categories.includes(filter);
+                isVisible = categories.split(' ').includes(filter);
             }
             card.classList.toggle('hidden', !isVisible);
             if (isVisible) visibleCount++;
