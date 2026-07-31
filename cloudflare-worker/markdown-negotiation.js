@@ -45,6 +45,22 @@ export default {
   },
 };
 
+// HTMLRewriter hands text chunks over exactly as they appear in the source —
+// it does not decode entities like the browser does, so `&mdash;` (already
+// literal in the rendered HTML, e.g. post titles) would otherwise leak into
+// the Markdown output unchanged instead of becoming "—".
+const NAMED_ENTITIES = {
+  amp: '&', lt: '<', gt: '>', quot: '"', apos: "'",
+  mdash: '—', ndash: '–', hellip: '…', nbsp: ' ',
+};
+
+function decodeEntities(text) {
+  return text
+    .replace(/&#(\d+);/g, (_, dec) => String.fromCodePoint(Number(dec)))
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&([a-zA-Z]+);/g, (m, name) => NAMED_ENTITIES[name] ?? m);
+}
+
 async function htmlToMarkdown(response) {
   let title = '';
   const out = [];
@@ -76,7 +92,7 @@ async function htmlToMarkdown(response) {
   });
 
   const rewriter = new HTMLRewriter()
-    .on('title', { text: (t) => { title += t.text; } })
+    .on('title', { text: (t) => { title += decodeEntities(t.text); } })
     // UI chrome and non-content elements inside <main> — excluded from the
     // markdown mirror on purpose (filter buttons, tab controls, icon SVGs).
     .on('main svg', skip)
@@ -84,6 +100,12 @@ async function htmlToMarkdown(response) {
     .on('main style', skip)
     .on('main button', skip)
     .on('main nav', skip)
+    // Adjacent <span>s (stat counters, label/value pairs) rely on CSS gap
+    // for spacing and have no whitespace between them in the markup — add
+    // it back so text doesn't run together, e.g. "4artigos".
+    .on('main span', {
+      element(el) { el.onEndTag(() => write(' ')); },
+    })
     .on('main h1', heading(1))
     .on('main h2', heading(2))
     .on('main h3', heading(3))
@@ -121,12 +143,20 @@ async function htmlToMarkdown(response) {
         write(`\n![${alt}](${src})\n`);
       },
     })
-    .on('main *', { text: (t) => write(t.text) });
+    .on('main *', {
+      text(t) {
+        // Collapse whitespace per text node — same rule the browser applies
+        // when rendering HTML — so source indentation (real newlines) never
+        // breaks a heading or paragraph onto its own stray line.
+        write(decodeEntities(t.text.replace(/\s+/g, ' ')));
+      },
+    });
 
   await rewriter.transform(response).text();
 
   const body = out.join('')
     .replace(/[ \t]+/g, ' ')
+    .replace(/ +\n/g, '\n')
     .replace(/\n{3,}/g, '\n\n')
     .trim();
 
