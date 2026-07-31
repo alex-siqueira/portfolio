@@ -534,6 +534,12 @@ main { flex: 1; position: relative; z-index: 1; }
   color: var(--fg-muted);
   line-height: 1.4;
 }
+/* The "current" timeline item nests a .timeline__period span inside the
+   .timeline__period wrapper div (to stack it above the "agora" badge) —
+   cancel the second padding-top so it doesn't stack too. */
+.timeline__period .timeline__period {
+  padding-top: 0;
+}
 .timeline__now {
   display: inline-block;
   margin-top: 4px;
