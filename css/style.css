@@ -87,7 +87,7 @@ main { flex: 1; position: relative; z-index: 1; }
 
 /* 4. LAYOUT */
 .container { max-width: var(--container); margin: 0 auto; padding: 0 32px; }
-.section { padding: 96px 32px; border-top: 1px solid var(--border); }
+.section { padding: 96px 32px; }
 
 /* 5. TYPOGRAPHY UTILITIES */
 .eyebrow {
@@ -975,4 +975,98 @@ main { flex: 1; position: relative; z-index: 1; }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* 18. TECHSTUDIO */
+/* Scopes the brand's own accent color to this page only — every shared
+   component below (.btn--primary, .section-num, .display-em, focus rings)
+   is already built on var(--accent), so overriding the token here re-themes
+   them without touching their rules or leaking outside this wrapper. */
+.ts { --accent: #C373B3; }
+
+.ts-inner { max-width: var(--container); margin: 0 auto; }
+
+.ts-header { padding: 120px 32px 56px; border-bottom: 1px solid var(--border); text-align: center; }
+.ts-header__inner { max-width: var(--container); margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+.ts-header__logo { width: 96px; height: 96px; margin: var(--s-5) 0; border-radius: var(--r-3); }
+.ts-header h1 {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: var(--fg);
+  margin: 0 0 var(--s-3);
+}
+.ts-header__sub { font-family: var(--ff-mono); font-size: 16px; color: var(--accent); margin: 0; }
+
+.ts-compare { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: var(--s-6) 0 0; }
+.ts-compare__item { padding: var(--s-5); font-family: var(--ff-mono); }
+.ts-compare__item:first-child { border-right: 1px solid var(--border); }
+.ts-compare__key { display: block; color: var(--fg-muted); text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; margin-bottom: 6px; }
+.ts-compare__val { display: block; color: var(--fg); font-size: 16px; font-style: normal; }
+.ts-compare__val em { font-style: italic; color: var(--accent); }
+
+.ts-refs__heading { font-family: var(--ff-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--fg-muted); margin: var(--s-7) 0 var(--s-4); }
+.ts-refs__heading:first-of-type { margin-top: var(--s-6); }
+.ts-refs__note { font-size: 14px; color: var(--fg-muted); margin: var(--s-3) 0 0; }
+.ts-refs__note a { color: var(--accent); }
+
+/* Statements that read as claims, not captions — same paragraph scale as
+   .sobre__body p, just standalone with breathing room above. */
+.ts-statement { font-size: 17px; line-height: 1.7; color: var(--fg-secondary); margin: var(--s-6) 0 0; }
+.ts-statement a { color: var(--accent); }
+
+.ts-interests { display: flex; flex-direction: column; margin-top: var(--s-6); }
+.ts-interest {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: var(--s-6);
+  padding: var(--s-5) 0;
+  border-bottom: 1px solid var(--border);
+}
+.ts-interest:first-child { border-top: 1px solid var(--border); }
+.ts-interest__label {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--fg-muted);
+  padding-top: 3px;
+}
+.ts-interest__content { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-3); }
+.ts-interest__content p { font-size: 17px; line-height: 1.7; color: var(--fg-secondary); margin: 0; }
+
+.ts-back { display: block; margin-top: var(--s-7); padding-top: var(--s-5); border-top: 1px solid var(--border); text-align: right; }
+.ts-back .btn--ghost {
+  background: var(--bg-elevated);
+  border-color: color-mix(in oklch, var(--accent) 45%, var(--border));
+  color: var(--accent);
+}
+.ts-back .btn--ghost:hover { border-color: var(--accent); background: var(--surface); }
+
+.ts-links { display: flex; flex-wrap: wrap; gap: 10px; }
+.ts-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  font-size: 14px;
+  color: var(--fg);
+  transition: border-color .18s, transform .18s, background .18s;
+}
+.ts-link svg:first-child { width: 18px; height: 18px; stroke-width: 1.75; color: var(--accent); flex-shrink: 0; }
+.ts-link svg:last-child { width: 14px; height: 14px; stroke-width: 1.75; color: var(--fg-muted); flex-shrink: 0; }
+.ts-link:hover { border-color: var(--accent); transform: translateY(-1px); background: var(--surface-2); }
+
+@media (max-width: 768px) {
+  .ts-header { padding: 100px 20px 40px; }
+  .ts .section { padding: 64px 20px; }
+  .ts-compare { grid-template-columns: 1fr; }
+  .ts-compare__item:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+  .ts-interest { grid-template-columns: 1fr; gap: var(--s-2); }
 }
