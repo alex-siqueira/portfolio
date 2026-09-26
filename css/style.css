@@ -12,7 +12,7 @@
   --border-strong: #3A3F4B;
   --fg:            #ECEDEF;
   --fg-secondary:  #9CA3AF;
-  --fg-muted:      #6B7280;
+  --fg-muted:      #878E99;
   --accent:        #4DDDFF;
   --accent-fg:     #08090C;
 
@@ -696,7 +696,7 @@ main { flex: 1; position: relative; z-index: 1; }
 .pub-card__link svg { width: 14px; height: 14px; stroke-width: 1.75; }
 
 /* 12. CONTACT */
-#contato { padding: 96px 32px; }
+#contato { padding: 112px 32px; }
 
 .contato__inner {
   max-width: var(--container);
