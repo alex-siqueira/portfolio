@@ -52,7 +52,7 @@ financeiro. Base para mais de duas décadas de atuação em tecnologia.
 
 ## Formação Acadêmica
 
-### Mestrado em Inovação Tecnológica — Universidade Federal de São Paulo (UNIFESP)
+### Mestrado Profissional Interdisciplinar em Inovação Tecnológica — Universidade Federal de São Paulo (UNIFESP)
 
 Pesquisa sobre identidades digitais baseadas em blockchain para prontuários
 médicos descentralizados. Resultou em publicação apresentada na IEEE DApps
@@ -75,3 +75,5 @@ Formação em fundamentos de ciência da computação. Orador da turma de 2003.
 - YouTube — TechStudio: [youtube.com/TechstudioPod](https://www.youtube.com/TechstudioPod)
 - Telegram: [@alexsiqueira_eth](https://t.me/alexsiqueira_eth)
 - ENS: [alexsiqueira.eth](https://app.ens.domains/alexsiqueira.eth)
+- E-mail acadêmico: alexandre.siqueira@unifesp.br
+- Currículo Lattes: [lattes.cnpq.br/5550434548511523](https://lattes.cnpq.br/5550434548511523)
